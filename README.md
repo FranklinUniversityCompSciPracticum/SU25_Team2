@@ -49,26 +49,32 @@ Follow these steps to get the project running on your computer.
 
 1️⃣ Clone the Repository
 
+# Open a terminal (or Git Bash) and run:
+
+cd ~/your-folder # Navigate to a folder where you want the project
+
+# Then clone the repository:
+
 git clone https://github.com/FranklinUniversityCompSciPracticum/SU25_Team2.git
 
 2️⃣ Navigate to the Project Folder
 
-cd SU25_Team2
+'cd SU25_Team2'
 
 3️⃣ Install Dependencies
 
-npm install
+'npm install'
 
 This installs all the necessary packages listed in package.json.
 
 4️⃣ Start the Development Server
 
-npm start
+'npm start'
 
 Your app will launch at:
 http://localhost:3000
 
-## Common Issues & Fixes
+## 🔥 Common Issues & Fixes
 
 1. "Command Not Found" Errors
    If git or npm is not recognized:
@@ -108,21 +114,26 @@ http://localhost:3000
    rm -rf node_modules package-lock.json
    npm install
 
-## Project Structure Overview
+## 🎯 Project Structure Overview
 
-SU25_Hotel/
+' SU25_Hotel/
 │-- public/ # Static assets
 │-- src/
 │ ├── components/ # Reusable UI components
 │ │ ├── Assets # Static assets for the components
-│ │ ├── Navbar # Navbar component
-│ │ ├── Footer # Footer component
+│ │ ├── navbar # Navbar component
+│ │ ├── footer # Footer component
 │ ├── context/ # Global state or context management
-│ ├── pages/ # Different screens (Login, Register, Cart, Product, ShopCategory, etc.)
+│ ├── pages/ # Different screens (Login, Dashboard, etc.)
+│ │ ├── cart
+│ │ ├── login
+│ │ ├── register
+│ │ ├── product
+│ │ ├── shop
+│ │ └── shopcategory
 │ ├── App.css
 │ ├── App.jsx # Main app component
 │ └── index.css
 │ └── index.js
 │-- package.json # Project dependencies
-|-- README.md
-|-- tailwind.config.js
+'
