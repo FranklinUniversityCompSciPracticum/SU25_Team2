@@ -53,7 +53,7 @@ Follow these steps to get the project running on your computer.
 
 `cd ~/your-folder`
 
-# Navigate to a folder where you want the project
+Navigate to a folder where you want the project
 
 # Then clone the repository:
 
@@ -79,15 +79,15 @@ http://localhost:3000
 ## 🔥 Common Issues & Fixes
 
 1. "Command Not Found" Errors
-   If git or npm is not recognized:
+   If `git` or `npm` is not recognized:
    Ensure Git and Node.js are properly installed.
 
    Restart your terminal after installing them.
 
    Run these commands to verify installation:
 
-   git -v # should return a Git version, e.g., git version 2.42.0
-   node -v # should return a Node version, e.g., v22.1.0
+   `git -v` # should return a Git version, e.g., git version 2.42.0
+   `node -v` # should return a Node version, e.g., v22.1.0
 
    If these commands return a version number, the tools are installed correctly.
 
@@ -97,7 +97,7 @@ http://localhost:3000
 
    To use a different port:
 
-   npm run dev -- --port 3000
+   `npm run dev -- --port 3000`
 
    To check if a port (like 5173) is still in use:
 
@@ -109,7 +109,7 @@ http://localhost:3000
    This means dependencies are missing or incorrectly installed.
    First, try:
 
-   npm install
+  `npm install`
 
    If problems persist, reset your dependencies:
 
