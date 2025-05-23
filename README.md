@@ -47,27 +47,29 @@ Code Editor with Git support (Recommended: Visual Studio Code)
 
 Follow these steps to get the project running on your computer.
 
-1️⃣ Clone the Repository
+## 1️⃣ Clone the Repository
 
 # Open a terminal (or Git Bash) and run:
 
-`cd ~/your-folder # Navigate to a folder where you want the project`
+`cd ~/your-folder`
+
+# Navigate to a folder where you want the project
 
 # Then clone the repository:
 
 `git clone https://github.com/FranklinUniversityCompSciPracticum/SU25_Team2.git`
 
-2️⃣ Navigate to the Project Folder
+## 2️⃣ Navigate to the Project Folder
 
 `cd SU25_Team2`
 
-3️⃣ Install Dependencies
+## 3️⃣ Install Dependencies
 
 `npm install`
 
 This installs all the necessary packages listed in package.json.
 
-4️⃣ Start the Development Server
+## 4️⃣ Start the Development Server
 
 `npm start`
 
@@ -111,30 +113,26 @@ http://localhost:3000
 
    If problems persist, reset your dependencies:
 
-   rm -rf node_modules package-lock.json
-   npm install
+   `rm -rf node_modules package-lock.json`
+   `npm install`
 
 ## 🎯 Project Structure Overview
 
 ```plaintext
 SU25_Hotel/
-│-- public/             # Static assets
+│-- public/               # Static assets
 │-- src/
-│   ├── components/     # Reusable UI components
-│   │   ├── Assets      # Static assets for the components
-│   │   ├── navbar      # Navbar component
-│   │   └── footer      # Footer component
-│   ├── context/        # Global state or context management
-│   ├── pages/          # Different screens (Login, Dashboard, etc.)
-│   │   ├── cart
-│   │   ├── login
-│   │   ├── register
-│   │   ├── product
-│   │   ├── shop
-│   │   └── shopcategory
+│   ├── Components/       # Reusable UI components
+│   │   ├── Assets        # Static assets for the components
+│   │   ├── Navbar        # Navbar component
+│   │   ├── Footer        # Footer component
+│   ├── Context/          # Global state or context management
+│   ├── Pages/            # Different screens (Login, Register, Cart, Product, etc.)
 │   ├── App.css
-│   ├── App.jsx         # Main app component
-│   ├── index.css
+│   ├── App.jsx           # Main app component
+│   └── index.css
 │   └── index.js
-│-- package.json        # Project dependencies
+│-- package.json          # Project dependencies
+|-- README.md
+|-- tailwind.config.js
 ```
