@@ -51,25 +51,25 @@ Follow these steps to get the project running on your computer.
 
 # Open a terminal (or Git Bash) and run:
 
-cd ~/your-folder # Navigate to a folder where you want the project
+`cd ~/your-folder # Navigate to a folder where you want the project`
 
 # Then clone the repository:
 
-git clone https://github.com/FranklinUniversityCompSciPracticum/SU25_Team2.git
+`git clone https://github.com/FranklinUniversityCompSciPracticum/SU25_Team2.git`
 
 2️⃣ Navigate to the Project Folder
 
-'cd SU25_Team2'
+`cd SU25_Team2`
 
 3️⃣ Install Dependencies
 
-'npm install'
+`npm install`
 
 This installs all the necessary packages listed in package.json.
 
 4️⃣ Start the Development Server
 
-'npm start'
+`npm start`
 
 Your app will launch at:
 http://localhost:3000
@@ -116,24 +116,25 @@ http://localhost:3000
 
 ## 🎯 Project Structure Overview
 
-' SU25_Hotel/
-│-- public/ # Static assets
+```plaintext
+SU25_Hotel/
+│-- public/             # Static assets
 │-- src/
-│ ├── components/ # Reusable UI components
-│ │ ├── Assets # Static assets for the components
-│ │ ├── navbar # Navbar component
-│ │ ├── footer # Footer component
-│ ├── context/ # Global state or context management
-│ ├── pages/ # Different screens (Login, Dashboard, etc.)
-│ │ ├── cart
-│ │ ├── login
-│ │ ├── register
-│ │ ├── product
-│ │ ├── shop
-│ │ └── shopcategory
-│ ├── App.css
-│ ├── App.jsx # Main app component
-│ └── index.css
-│ └── index.js
-│-- package.json # Project dependencies
-'
+│   ├── components/     # Reusable UI components
+│   │   ├── Assets      # Static assets for the components
+│   │   ├── navbar      # Navbar component
+│   │   └── footer      # Footer component
+│   ├── context/        # Global state or context management
+│   ├── pages/          # Different screens (Login, Dashboard, etc.)
+│   │   ├── cart
+│   │   ├── login
+│   │   ├── register
+│   │   ├── product
+│   │   ├── shop
+│   │   └── shopcategory
+│   ├── App.css
+│   ├── App.jsx         # Main app component
+│   ├── index.css
+│   └── index.js
+│-- package.json        # Project dependencies
+```
