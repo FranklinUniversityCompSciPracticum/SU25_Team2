@@ -1,22 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+// MORE IMPORTS WILL GO HERE.
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          WELCOME SU25 TEAM 2 :)
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* ADD MORE ROUTES HERE */}  
+        {/* Example: <Route path="/mens" element={<Mens />} /> */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
