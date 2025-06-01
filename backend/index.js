@@ -13,7 +13,12 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 
-// Database Connection with MongoDB
+// Database Connection with MongoDB, throws error if MONGO_URI is not defined
+if (!process.env.MONGO_URI) {
+  console.error("Error: MONGO_URI is not defined in your environment variables. Please check your .env file.");
+  process.exit(1);
+}
+
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Successfully Connected"))
   .catch((error) => 
