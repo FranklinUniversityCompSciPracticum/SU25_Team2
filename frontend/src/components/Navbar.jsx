@@ -1,55 +1,45 @@
 // Navbar sits above routes will be used to navigate between pages
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './Navbar.css'; 
 
-export default function Navbar() {
-    const [isOpen, setIsOpen] = useState('/');
+// Need to import images for logo and cart icon
+// import logo from '../Assets/logo.png'; // logo img 
+// import cart_icon from '../Assets/cart-icon.png'; // cart icon img
 
-    // when user clicks nav link update state
-    const handleClick = (path) => {
-        setIsOpen(path);
-    };
+// Navbar component
+// This component will be used to navigate between different pages of the application
 
-    const linkStyle = (path) => ({
-        color: isOpen === path ? 'blue' : 'black',
-        textDecoration: 'none',
-        padding: '10px 15px',
-        borderRadius: '5px',
-        backgroundColor: isOpen === path ? '#f0f0f0' : 'transparent',
-    });
+const Navbar = () => {
+    const [menu, setMenu] = useState("shop");
 
     return (
-        <nav style={{ display: 'flex', alignItems: 'center', padding: '10px', backgroundColor: '#f8f8f8' }}>
-            {/* Definine four main links */}
-            <div style={{ flexGrow: 1 }}>
-                <Link to="/"
-                    style={linkStyle('/')}
-                    onClick={() => handleClick('/')}
-                >
-                    Shop
-                </Link>
-                <Link to="/mens"
-                    style={linkStyle('/men')}
-                    onClick={() => handleClick('/men')}
-                >
-                    Men
-                </Link>
-                <Link to="/women"
-                    style={linkStyle('/women')}
-                    onClick={() => handleClick('/women')}
-                >
-                    Women
-                </Link>
-                <Link to="/kids"
-                    style={linkStyle('/kids')}
-                    onClick={() => handleClick('/kids')}
-                >
-                    Kids
-                </Link>
-                
-                {/* ADDD MORE LINKS HERE */}
-                </div>
-                </nav>
+        <div className="navbar">
+            <div className="nav-logo">
+                {/* <img src={logo} alt="" /> */}
+                <p>Paradise</p>
+            </div>
+            <ul className="nav-menu">
+                <li onClick={() => setMenu("shop")}>
+                    <Link to="/" className="nav-link">Shop</Link>
+                    {menu === "shop" && <hr />}
+                </li>
+                <li onClick={() => setMenu("mens")}>
+                    <Link to="/men" className="nav-link">Men</Link>
+                    {menu === "mens" && <hr />}
+                </li>
+                <li onClick={() => setMenu("womens")}>
+                    <Link to="/women" className="nav-link">Women</Link>
+                    {menu === "womens" && <hr />}
+                </li>
+                <li onClick={() => setMenu("kids")}>
+                    <Link to="/kids" className="nav-link">Kids</Link>
+                    {menu === "kids" && <hr />}
+                </li>
+            </ul>
+            {/* <img src={cart_icon} alt="Cart" className="nav-cart" /> */}
+        </div>
+    );
+};
 
-    )
-}
+export default Navbar;
