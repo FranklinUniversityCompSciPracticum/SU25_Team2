@@ -16,11 +16,13 @@ John Schaefer
 
 ### 394 Students
 
-394 Student(s) here
+Antonia Kelly
+Nicholas Doran
 
 ### 294 Students
 
-294 Student(s) here
+Case Starcher
+Spencer Teillon
 
 ## Tech Stack
 
@@ -41,7 +43,7 @@ Node.js – JavaScript runtime environment
 
 Git – Version control system
 
-Code Editor with Git support (Recommended: Visual Studio Code)
+Code Editor with Git support (Recommended: **Visual Studio Code**)
 
 ## Project Setup
 
@@ -117,7 +119,7 @@ http://localhost:3000
    `npm install`
 
 ## 🎯 Project Structure Overview
-
+*BEING MODIFIED 06/03
 ```plaintext
 SU25_Hotel/
 │-- public/               # Static assets
