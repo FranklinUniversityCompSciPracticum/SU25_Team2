@@ -15,8 +15,10 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="nav-logo">
-                <img src={logo} alt="" />
-                <p>Paradise</p>
+                <Link to="/" className="nav-logo-link">
+                    <img src={logo} alt="" />
+                    <p>Paradise</p>
+                </Link>
             </div>
             <ul className="nav-menu">
                 <li onClick={() => setMenu("shop")}>
@@ -36,7 +38,11 @@ const Navbar = () => {
                     {menu === "kids" && <hr />}
                 </li>
             </ul>
-            <img src={cart_icon} alt="Cart" className="nav-cart" />
+            <div className="nav-login-cart">
+                <Link to='/login' className="nav-login"><button>Login</button></Link>
+                <Link to='/cart'></Link><img src={cart_icon} alt="Cart" className="nav-cart" />
+                <div className="nav-cart-count">0</div>
+            </div>
         </div>
     );
 };

@@ -26,6 +26,13 @@
     letter-spacing: 2px;
 }
 
+.nav-logo-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
 .nav-menu {
     display: flex;
     gap: 24px;
@@ -69,9 +76,54 @@
     background-color: #f0f0f0;
 }
 
+.nav-login-cart {
+    display: flex;
+    align-items: center;
+    position: relative; /* Needed for absolute positioning of cart count */
+    gap: 32px; /* Added some space between login and cart */
+}
+
+.nav-login button {
+    padding: 6px 28px;
+    border: 2px solid #c4c4c4;
+    border-radius: 999px; /* Makes it oval */
+    background: white;
+    color: #222;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, border 0.2s;
+}
+
+.nav-login button:hover {
+    background: #f0f0f0;
+    border-color: #1976d2;
+    color: #1976d2;
+}
+
 .nav-cart {
     height: 32px;
     width: 32px;
     margin-left: auto;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 14px;
+    background: #F44336;
+    color: white;
+    font-weight: bold;
+    z-index: 2;
+    pointer-events: none;
 }
