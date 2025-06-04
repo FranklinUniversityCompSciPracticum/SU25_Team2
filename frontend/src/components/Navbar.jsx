@@ -3,9 +3,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css'; 
 
-// Need to import images for logo and cart icon
-// import logo from '../Assets/logo.png'; // logo img 
-// import cart_icon from '../Assets/cart-icon.png'; // cart icon img
+import logo from './Assets/palm_tree.png';
+import cart_icon from './Assets/cart_icon.png';
 
 // Navbar component
 // This component will be used to navigate between different pages of the application
@@ -16,7 +15,7 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="nav-logo">
-                {/* <img src={logo} alt="" /> */}
+                <img src={logo} alt="" />
                 <p>Paradise</p>
             </div>
             <ul className="nav-menu">
@@ -37,7 +36,7 @@ const Navbar = () => {
                     {menu === "kids" && <hr />}
                 </li>
             </ul>
-            {/* <img src={cart_icon} alt="Cart" className="nav-cart" /> */}
+            <img src={cart_icon} alt="Cart" className="nav-cart" />
         </div>
     );
 };

@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         {/* ADD MORE ROUTES HERE */}  
-        {/* Example: <Route path="/mens" element={<Mens />} /> */}
+        {/* Example: <Route path="/men" element={<Men />} /> */}
       </Routes>
     </BrowserRouter>
   );
