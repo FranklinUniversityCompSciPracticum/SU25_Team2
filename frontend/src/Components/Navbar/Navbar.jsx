@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css'; 
 
-import logo from './Assets/palm_tree.png';
-import cart_icon from './Assets/cart_icon.png';
+import logo from '../Assets/palm_tree.png';
+import cart_icon from '../Assets/cart_icon.png';
 
 // Navbar component
 // This component will be used to navigate between different pages of the application
