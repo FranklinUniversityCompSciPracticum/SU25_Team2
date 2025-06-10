@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Navbar from './Components/Navbar/Navbar';
-import Home from './Pages/Home';
+import Shop from './Pages/Shop';
 // MORE IMPORTS WILL GO HERE.
 
 import './App.css';
@@ -13,9 +13,12 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        {/* ADD MORE ROUTES HERE -Men, Women,Kids,Login,Cart */}  
-        {/* Example: <Route path="/men" element={<Men />} /> */}
+        <Route path="/" element={<Shop />} />
+        {/* Add your routes here, example: <Route path="/about" element={<About />} /> */}
+        {/*<Route path="/cart"
+        {/*<Route path="/login" 
+        {/*<Route path="/register"
+        {/* Add more routes as needed */}
       </Routes>
     </BrowserRouter>
   );
