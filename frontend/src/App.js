@@ -5,24 +5,28 @@ import Navbar from './Components/Navbar/Navbar';
 import Shop from './Pages/Shop';
 import Login from './Pages/Login';
 import Cart from './Pages/Cart';
+import Footer from './Components/Footer/Footer';
 // MORE IMPORTS WILL GO HERE.
 
 import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
+    <div className="app-container">
+      <BrowserRouter>
+        <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Shop />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Cart" element={<Cart />} />
-        {/* Add your routes here, example: <Route path="/about" element={<About />} /> */}
-        {/*<Route path="/register"
-        {/* Add more routes as needed */}
-      </Routes>
-    </BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Shop />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Cart" element={<Cart />} />
+          {/* Add your routes here, example: <Route path="/about" element={<About />} /> */}
+          {/*<Route path="/register"
+          {/* Add more routes as needed */}
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </div>
   );
 }
 
