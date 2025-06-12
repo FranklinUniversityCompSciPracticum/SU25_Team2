@@ -6,6 +6,7 @@ import Shop from './Pages/Shop';
 import Login from './Pages/Login';
 import Cart from './Pages/Cart';
 import Footer from './Components/Footer/Footer';
+import ShopCategory from './Pages/ShopCategory';
 // MORE IMPORTS WILL GO HERE.
 
 import './App.css';
@@ -20,6 +21,9 @@ function App() {
           <Route path="/" element={<Shop />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Cart" element={<Cart />} />
+          <Route path="/men" element={<ShopCategory category="men" />} />
+          <Route path="/women" element={<ShopCategory category="women" />} />
+          <Route path="/kids" element={<ShopCategory category="kid" />} />
           {/* Add your routes here, example: <Route path="/about" element={<About />} /> */}
           {/*<Route path="/register"
           {/* Add more routes as needed */}
