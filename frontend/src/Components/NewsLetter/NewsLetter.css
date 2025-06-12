@@ -42,12 +42,13 @@
     outline: none;
     font-family: Poppins;
     font-size: 16px;
+    color: #333333;
     background: #FAF3E0
 }
 
 .newsletter div button{
     width: 210px;
-    height: 70px;
+    height: 71px;
     border-radius: 80px;
     background: 	#FFD54F;
     color: 	#333333;
@@ -56,5 +57,6 @@
 }
 
 .newsletter div button:hover {
-    background: #fde492
+    background: #fdcb92;
+    border: 2px solid #b16105;
 }
