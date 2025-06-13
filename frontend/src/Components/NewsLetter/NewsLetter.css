@@ -29,14 +29,12 @@
     align-items: center;
     justify-content: space-between;
     background: #FAF3E0;
-    width: 730px;
     height: 60px;
     border-radius: 85px;
     border: 2px solid 	#FF6F61;
 }
 
 .newsletter input{
-    width: 500px;
     margin-left: 30px;
     border: none;
     outline: none;
@@ -59,4 +57,9 @@
 .newsletter div button:hover {
     background: #fdcb92;
     border: 2px solid #b16105;
+}
+
+div .submit {
+    width: 100%;
+    max-width: 730px;
 }
