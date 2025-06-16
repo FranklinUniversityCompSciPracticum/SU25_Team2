@@ -42,7 +42,7 @@
 }
 
 .close-button:hover {
-    background-color: #fdcb92B0;
+    font-style: italic;
     transition: all 0.2s ease-in-out;
 }
 
