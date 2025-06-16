@@ -6,7 +6,7 @@ const NewsLetter = ({ onClose }) => {
         <div className='newsletter'>
             <div className="background-white">
                 <div className="background-trans">
-                <button className="close-button" onClick={onClose}>Not now</button>
+                <button className="close-button" onClick={onClose}>Later</button>
                 <h1>Get Exclusive Offers On Your Email</h1>
                 <p>Subscribe and Save!</p>
                     <div className='submit'>
