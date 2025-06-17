@@ -1,15 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import NewsLetter from '../Components/NewsLetter/NewsLetter';
 import Popular from '../Components/Popular/Popular';
 
 export default function Shop() {
+
+    const [showNewsletter, setShowNewsletter] = useState(true);
+    const handleClose = () => {
+        setShowNewsletter(false);
+    };
+
+
+
     return (
         <div style={{ padding: '20px', textAlign: 'center' }}>
             <h1>Welcome to the home Shop Page</h1>
             <p>This our main page.</p>
             <Popular />
             <hr />
-            <NewsLetter/>
+            {showNewsletter && <NewsLetter onClose={handleClose} />}
         </div>
     );
 }
