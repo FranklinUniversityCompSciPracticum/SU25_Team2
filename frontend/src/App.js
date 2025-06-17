@@ -24,6 +24,8 @@ function App() {
           <Route path="/men" element={<ShopCategory category="men" />} />
           <Route path="/women" element={<ShopCategory category="women" />} />
           <Route path="/kids" element={<ShopCategory category="kid" />} />
+          <Route path="/product/:productId" element={<Product />} />
+          <Route path="/register" element={<Register />} />  
           {/* Add your routes here, example: <Route path="/about" element={<About />} /> */}
           {/*<Route path="/register"
           {/* Add more routes as needed */}
