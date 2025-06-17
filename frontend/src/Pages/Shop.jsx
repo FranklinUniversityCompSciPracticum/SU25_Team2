@@ -4,6 +4,7 @@ import Popular from '../Components/Popular/Popular';
 
 export default function Shop() {
 
+    //use state to keep track of if the newsletter has been closed
     const [showNewsletter, setShowNewsletter] = useState(true);
     const handleClose = () => {
         setShowNewsletter(false);
