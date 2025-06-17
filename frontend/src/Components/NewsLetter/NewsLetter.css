@@ -1,6 +1,6 @@
 .newsletter {
     width: 98%;
-    height: 19vh;
+    height: 17vh;
     margin: auto;
     position: fixed;
     bottom: 30px;
@@ -23,10 +23,10 @@
     align-items: center;
     justify-content: center;
     padding: 0px 140px;
-    gap: 15px;
+    gap: 0px;
     position: relative;
     height: 100%;
-    z-index: 1;
+    z-index: 100;
     background-image: linear-gradient(120deg, 	#00968830 0%, #FF6F6130	 60%);
 }
 
