@@ -35,7 +35,6 @@ app.get("/", (req, res)=> {
 	res.send("Express App is Running")
 })
 
-
 // API Creation
 
 app.listen(port,(error)=> {
