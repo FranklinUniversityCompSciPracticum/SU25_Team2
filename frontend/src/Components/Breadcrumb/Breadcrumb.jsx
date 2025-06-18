@@ -1,15 +1,20 @@
-import React from 'react'
-import './Breadcrumb.css'
-import arrow_icon from '../Assets/breadcrum_arrow.png'
+import React from 'react';
+import './Breadcrumb.css';
+import arrow_icon from '../Assets/breadcrum_arrow.png';
 
 const Breadcrumb = (props) => {
-    const {product} = props;
+    const { product } = props;
 
-    return ( 
-        <div className='breadcrumb'>
-            HOME<img src={arrow_icon} alt="" />SHOP<img src={arrow_icon} alt="" />{product.category.toUpperCase()}<img src={arrow_icon} alt="" />{product.name}
-        </div>
+    return (
+        <nav className='breadcrumb'>
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/shop">SHOP</a></li>
+                <li><a href={`/shop/${product.category.toLowerCase()}`}>{product.category.toUpperCase()}</a></li>
+                <li><span className="current">{product.name}</span></li>
+            </ul>
+        </nav>
     );
 }
 
-export default Breadcrumb
+export default Breadcrumb;
