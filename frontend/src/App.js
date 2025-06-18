@@ -7,6 +7,9 @@ import Login from './Pages/Login';
 import Cart from './Pages/Cart';
 import Footer from './Components/Footer/Footer';
 import ShopCategory from './Pages/ShopCategory';
+import Product from './Pages/Product'
+import Register from './Pages/Register'
+
 // MORE IMPORTS WILL GO HERE.
 
 import './App.css';
