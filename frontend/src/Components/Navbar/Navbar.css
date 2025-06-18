@@ -22,7 +22,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     margin: 0;
-    color: #222;
+    color: #4CAF50;
     letter-spacing: 2px;
 }
 
@@ -97,8 +97,8 @@
 
 .nav-login button:hover {
     background: #f0f0f0;
-    border-color: #1976d2;
-    color: #1976d2;
+    border-color: #4CAF50;
+    color: #4CAF50;
 }
 
 .nav-cart {
@@ -121,7 +121,7 @@
     justify-content: center;
     border-radius: 50%;
     font-size: 14px;
-    background: #F44336;
+    background: #4CAF50;
     color: white;
     font-weight: bold;
     z-index: 2;
