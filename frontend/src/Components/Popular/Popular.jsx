@@ -9,8 +9,7 @@ items in from the data.js file. Will update to fetch data from the backend later
 const Popular = (props) => {
   return (
     <div className='popular'>
-      <h1>Popular in Men</h1>
-      <hr />
+      <h1>Popular in Men</h1> 
       <div className="popular-item">
         {data_product.map((item, index) => {
             return (

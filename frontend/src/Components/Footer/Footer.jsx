@@ -17,11 +17,10 @@ const Footer = () => {
                 </Link>
             </div>
             <ul className="footer-links">
-                <li>Links TBD</li>
-                <li>Link 2</li>
-                <li>Link 3</li>
-                <li>Link 4</li>
-                <li>Link 5</li>
+                <li><Link to="/about">About Us</Link></li> 
+                <li>Gift Cards</li>
+                <li>Blog</li>
+                <li><Link to="/login">My Account</Link></li>
             </ul>
             <div className="footer-social-icons">
                 <div className="footer-icons-container">
