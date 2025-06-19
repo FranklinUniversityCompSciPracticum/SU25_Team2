@@ -8,22 +8,19 @@
 }
 .popular h1{
     color: #171717;
-    font-size: 40px;
+    font-size: 25px;
     font-weight: 600;
 }
-.popular hr{
-    width: 150px;
-    height: 4px;
-    border-radius: 10px;
-    background: #252525;
-}
+
 .popular-item{
-    margin-top: 40px;
+    margin-top: 20px;
     display: flex;
     width: 100%;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; 
+    Was causing display issues*/
     gap: 25px;
     justify-content: center;
+    align-items: baseline; 
 }
 /* ---------- media query------------ */
 
