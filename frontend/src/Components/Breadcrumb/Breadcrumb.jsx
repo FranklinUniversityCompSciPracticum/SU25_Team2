@@ -10,7 +10,7 @@ const Breadcrumb = (props) => {
             <ul>
                 <li><a href="/">HOME</a></li>
                 <li><a href="/shop">SHOP</a></li>
-                <li><a href={`/shop/${product.category.toLowerCase()}`}>{product.category.toUpperCase()}</a></li>
+                <li><a href={`/${product.category.toLowerCase()}`}>{product.category.toUpperCase()}</a></li>
                 <li><span className="current">{product.name}</span></li>
             </ul>
         </nav>
