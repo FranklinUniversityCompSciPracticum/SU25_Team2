@@ -1,10 +1,15 @@
 import React from 'react';
+import './CSS/About.css'
 
 export default function About() {
     return (
-        <div style={{ padding: '20px', textAlign: 'center' }}>
-            <h1>About Us</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur tempore debitis doloremque alias, incidunt quisquam magni ratione labore omnis vitae totam facere minima vero, ipsa eos blanditiis. Enim, praesentium quam!</p>
+        <div className='container'>
+            <div className='header'>
+                <h1>About Us</h1>
+            </div>
+            <div className='body'>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti qui quam sunt a fugit neque quos, id dolorum magnam atque, quis repellat eum magni illo iste! Aliquid at mollitia corrupti.</p>
+            </div>
         </div>
     );
 }
