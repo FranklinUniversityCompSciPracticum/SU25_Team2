@@ -17,6 +17,17 @@
     z-index: 0;
 }
 
+.close-icon {
+    color: #333333
+}
+
+.close-icon:hover {
+    color: #000000;
+    background-color: #ffa9a9;
+    font-weight: 900;
+    transition: all 0.2s ease-in-out;
+}
+
 .background-trans {
     display: flex;
     flex-direction: column;
@@ -36,14 +47,6 @@
     right: 10px;
     background: transparent;
     border: none;
-    font-size: 12px;
-    cursor: pointer;
-    font-weight: 500;
-}
-
-.close-button:hover {
-    font-style: italic;
-    transition: all 0.2s ease-in-out;
 }
 
 .background-trans h1 {
