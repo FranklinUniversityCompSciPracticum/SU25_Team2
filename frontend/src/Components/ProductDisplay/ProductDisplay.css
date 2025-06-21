@@ -111,3 +111,8 @@
 .productdisplay-right-category span {
     font-weight: 600;
 }
+
+.add-to-cart-container {
+  position: relative;
+  display: inline-block;
+}

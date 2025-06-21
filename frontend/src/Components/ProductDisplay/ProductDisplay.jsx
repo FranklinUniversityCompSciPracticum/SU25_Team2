@@ -3,13 +3,15 @@ import { ShopContext } from '../../Context/ShopContext';
 import './ProductDisplay.css';
 import star_icon from "../Assets/star_icon.png";
 import star_dull_icon from "../Assets/star_dull_icon.png";
+import ProductAddedModal from "../ProductAddedModal/ProductAddedModal";
 
 /* This ProductDisplay component displays the product details. It is used in the Product page. 
    The product details are passed as props from the Product page. */
 
 const ProductDisplay = (props) => {
     const { product } = props;
-    const { addToCart } = useContext(ShopContext);
+      const {addToCart, showModal} = useContext(ShopContext);
+    
     return (
         <div className='productdisplay'>
             <div className="productdisplay-left">
@@ -51,7 +53,10 @@ const ProductDisplay = (props) => {
                         <div>XXL</div>
                     </div>
                 </div>
-                <button onClick={() => { addToCart(product.id) }}>Add to Cart</button>
+                <div className="add-to-cart-container">
+                    <button onClick={() => addToCart(product.id)}>ADD TO CART</button>
+                    <ProductAddedModal visible={showModal} />
+                </div>
                 <p className='productdisplay-right-category'>
                     <span>Category :</span> {product.category}
                 </p>

@@ -1,0 +1,21 @@
+.product-added-modal {
+  position: absolute;
+  left: 70%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #38c172;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  animation: fadeOut 2s forwards;
+}
+
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
