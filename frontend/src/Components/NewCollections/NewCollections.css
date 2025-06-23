@@ -1,4 +1,4 @@
-.new-collections{
+.newcollections{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,7 +6,7 @@
     max-width: 1280px;
     margin: auto;
 }
-.new-collections h1{
+.newcollections h1{
     color: #171717;
     font-size: 25px;
     font-weight: 600;
@@ -21,10 +21,10 @@
 /* ---------- media query------------ */
 
 @media(max-width: 800px){
-    .new-collections h1{
+    .newcollections h1{
         font-size: 30px;
     }
-    .new-collections hr{
+    .newcollections hr{
         width: 80px;
         height: 4px;
         
