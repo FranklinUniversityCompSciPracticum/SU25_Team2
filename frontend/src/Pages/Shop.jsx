@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import NewsLetter from '../Components/NewsLetter/NewsLetter';
 import Popular from '../Components/Popular/Popular';
+import Offers from '../Components/Offers/Offers';
 
 export default function Shop() {
 
@@ -17,6 +18,7 @@ export default function Shop() {
             <h1>Welcome to the home Shop Page</h1>
             <p>This our main page.</p>
             <Popular />
+            <Offers/>
             <hr />
             {showNewsletter && <NewsLetter onClose={handleClose} />}
         </div>

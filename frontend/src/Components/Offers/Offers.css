@@ -1,0 +1,29 @@
+.Offers {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;     /* Vertical centering */
+  min-height: 100vh;       /* Full viewport height */
+  width: 100%;             /* Full width */
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa; /* Optional background */
+}
+
+.Offers ul {
+  list-style: none;        /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+  text-align: center;      /* Center text content */
+}
+
+.Offers li {
+  margin: 1rem 0;          /* Spacing between list items */
+}
+
+.test {
+  display: inline-block;   /* Allows proper centering of content */
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
