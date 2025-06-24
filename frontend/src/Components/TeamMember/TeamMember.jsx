@@ -1,22 +1,29 @@
 import React, { useState } from 'react';
 import { Avatar } from '@mui/material';
 
-function TeamMember({ name, initials, role }) {
-  const [isHovered, setIsHovered] = useState(false);
+function TeamMember({ name, initials, role, setActiveMember, memberBlurb }) {
 
-  return (
-    <div 
-      onMouseEnter={() => setIsHovered(true)} 
-      onMouseLeave={() => setIsHovered(false)}
-    >
-        <Avatar 
-            className='team-avatars'
-            alt={name}
-            sx={{ width: 75, height: 75 }} 
-            src=""> {initials} 
+    const handleMouseEnter = () => {
+        setActiveMember({ name, role, memberBlurb});
+    };
+
+    const handleMouseLeave = () => {
+        setActiveMember(null);
+    };
+
+    return (
+        <div
+            className='avatar-expand'
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
+            <Avatar 
+                className='team-avatars'
+                alt={name}
+                sx={{ width: 75, height: 75 }} 
+                src=""> {initials} 
             </Avatar>
-    {isHovered && <div className="blurb">{name} - {role}</div>}
-    </div>
+        </div>
   );
 }
 
