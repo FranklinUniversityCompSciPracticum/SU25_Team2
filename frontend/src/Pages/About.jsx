@@ -44,7 +44,6 @@ export default function About() {
                         src=""> CS </Avatar>
                 </Stack>
             </div>
-            <div className='footer'> </div>
         </div>
     );
 }

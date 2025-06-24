@@ -1,5 +1,5 @@
 .container{
-    height: 70vh;
+    min-height: 70vh;
     width: 80vw;
     display: flex;
     flex-direction: column;
@@ -35,7 +35,7 @@
 }
 
 .body p {
-    text-indent: 70px;
+    margin-bottom: 15px;
 }
 
 .team {
@@ -49,8 +49,4 @@
     margin-top: 10px;
     font-size: 30px;
     font-weight: 600;
-}
-
-.footer {
-    padding: 50px;
 }
