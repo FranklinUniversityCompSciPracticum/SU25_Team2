@@ -101,13 +101,3 @@
     color: #333333;
     background: #FAF3E0
 }
-
-.background-trans div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #FAF3E0;
-    height: 60px;
-    border-radius: 85px;
-    border: 2px solid 	#FF6F61;
-}
