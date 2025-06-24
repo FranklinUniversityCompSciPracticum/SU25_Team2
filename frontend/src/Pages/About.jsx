@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './CSS/About.css'
 import { Avatar } from '@mui/material';
 import Stack from '@mui/material/Stack';
@@ -19,27 +19,33 @@ export default function About() {
                 <h2> Meet the Team </h2>
                 <Stack direction="row" spacing={2}>
                     <Avatar 
+                        className='team-avatars'
                         alt="John Schaefer" 
                         sx={{ width: 75, height: 75 }} 
                         src=""> JS </Avatar>
                     <Avatar 
+                        className='team-avatars'
                         alt="Ayub Ali" 
                         sx={{ width: 75, height: 75 }} 
                         src=""> AA </Avatar>
                     <Avatar 
-                        alt="Spencer Teillon" 
+                        className='team-avatars'
+                        alt="Spencer Teillon"
                         sx={{ width: 75, height: 75 }} 
                         src=""> ST </Avatar>
                     <Avatar 
+                        className='team-avatars'
                         alt="Antonia Kelly-Caswell" 
                         sx={{ width: 75, height: 75 }} 
                         src=""> AC </Avatar>
                     <Avatar 
                         alt="Nick Doran" 
+                        className='team-avatars'
                         sx={{ width: 75, height: 75 }} 
                         src=""> ND </Avatar>
                     <Avatar 
                         alt="Case Starcher"
+                        className='team-avatars'
                         sx={{ width: 75, height: 75 }} 
                         src=""> CS </Avatar>
                 </Stack>
