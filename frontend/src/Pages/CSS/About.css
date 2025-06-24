@@ -17,13 +17,13 @@
     width: 100%;
     height: 20vh;
     padding: 20px;
-    background-color: #009688;
+    background-color: #00968890;
     border-radius: 20px;
 }
 
 .body {
     padding: 20px;
-    background-color: #FF6F61;
+    background-color: #FF6F6190;
     height: 50vh;
     border-radius: 20px;
 }
