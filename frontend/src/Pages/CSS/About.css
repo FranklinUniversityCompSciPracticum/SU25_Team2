@@ -23,7 +23,7 @@
 .body {
     padding: 15px 50px;
     background-color: #FF6F61;
-    height: 50vh
+    height: 50vh;
 }
 
 .body h2 {
@@ -47,5 +47,8 @@
     margin-top: 10px;
     font-size: 30px;
     font-weight: 600;
-    margin-bottom: 10px;
+}
+
+.footer {
+    padding: 50px;
 }

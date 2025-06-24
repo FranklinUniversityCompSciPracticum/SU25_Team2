@@ -30,7 +30,7 @@ export default function About() {
                         alt="Spencer Teillon" 
                         sx={{ width: 75, height: 75 }} 
                         src=""> ST </Avatar>
-                        <Avatar 
+                    <Avatar 
                         alt="Antonia Kelly-Caswell" 
                         sx={{ width: 75, height: 75 }} 
                         src=""> AC </Avatar>
@@ -44,6 +44,7 @@ export default function About() {
                         src=""> CS </Avatar>
                 </Stack>
             </div>
+            <div className='footer'> </div>
         </div>
     );
 }
