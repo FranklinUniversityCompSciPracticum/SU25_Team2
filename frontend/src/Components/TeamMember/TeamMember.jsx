@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Avatar } from '@mui/material';
 
-function TeamMember({ name, initials, role, setActiveMember, memberBlurb }) {
+function TeamMember({ name, initials, role, setActiveMember, memberBlurb, imgUrl }) {
 
     const handleMouseEnter = () => {
         setActiveMember({ name, role, memberBlurb});
@@ -21,7 +21,7 @@ function TeamMember({ name, initials, role, setActiveMember, memberBlurb }) {
                 className='team-avatars'
                 alt={name}
                 sx={{ width: 75, height: 75 }} 
-                src=""> {initials} 
+                src={imgUrl}> {initials} 
             </Avatar>
         </div>
   );

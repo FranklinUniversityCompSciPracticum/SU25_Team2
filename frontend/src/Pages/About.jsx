@@ -30,6 +30,7 @@ export default function About() {
                         initials="JS"
                         memberBlurb={loremText}
                         role="Lead Developer"
+                        imgUrl="null"
                         setActiveMember={setActiveMember}
                     />
                     <TeamMember
@@ -37,6 +38,7 @@ export default function About() {
                         initials="AA"
                         memberBlurb={loremText}
                         role="Product Manager"
+                        imgUrl="null"
                         setActiveMember={setActiveMember}
                     />
                     <TeamMember
@@ -44,6 +46,7 @@ export default function About() {
                         initials="ST"
                         memberBlurb={loremText}
                         role="UX Designer"
+                        imgUrl="null"
                         setActiveMember={setActiveMember}
                     />
                     <TeamMember
@@ -51,6 +54,7 @@ export default function About() {
                         initials="AC"
                         memberBlurb={loremText}
                         role="Backend Engineer"
+                        imgUrl="null"
                         setActiveMember={setActiveMember}
                     />
                     <TeamMember
@@ -58,12 +62,14 @@ export default function About() {
                         initials="ND"
                         memberBlurb={loremText}
                         role="Marketing Lead"
+                        imgUrl="null"
                         setActiveMember={setActiveMember}
                     />
                     <TeamMember
                         name="Case Starcher"
                         initials="CS"
                         role="QA Specialist"
+                        imgUrl="null"
                         memberBlurb={loremText}
                         setActiveMember={setActiveMember}
                     />
