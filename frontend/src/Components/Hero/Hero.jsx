@@ -14,7 +14,7 @@ function Hero() {
         alt="Hero"
       />
     </section>
-  );
+  )
 }
 
 export default Hero;
