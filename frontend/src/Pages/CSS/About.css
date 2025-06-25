@@ -17,13 +17,13 @@
     width: 100%;
     height: 10vh;
     padding: 20px;
-    background-color: #4CAF5070;
+    background-color: #4CAF5030;
     border-radius: 20px;
 }
 
 .body {
     padding: 20px;
-    background-color: #FAF3E0;
+    background-color: #FAF3E030;
     min-height: 50vh;
     border-radius: 20px;
 }
