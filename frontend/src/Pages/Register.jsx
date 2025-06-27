@@ -19,7 +19,7 @@ const Register = ( ) => {
             <TextField id="email" label="Email Address" variant="outlined" />
             <TextField id="username" label="Username" variant="outlined" />
             <TextField id="password" label="Password" variant="outlined" type="password" />
-            <Button variant="register-button">Register</Button>
+            <Button variant="contained">Register</Button>
             <p className='login-redirect'>Already have an account? Login <Link to='/login'>here</Link> instead</p>
         </Box>
     )
