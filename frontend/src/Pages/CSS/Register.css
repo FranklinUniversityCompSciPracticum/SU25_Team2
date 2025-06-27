@@ -1,0 +1,18 @@
+.registration-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 50vh;
+    min-height: 50vh;
+    padding: 5px;
+    flex-direction: column;
+}
+
+.name-entry{
+    display: flex;
+    gap: 16px;
+}
+
+.login-redirect {
+    font-size: small;
+}
