@@ -107,6 +107,7 @@ const Product = mongoose.model("Product", {
   },
 })
 
+// Creating Endpoint for Adding Products
 app.post('/addproduct', async (req, res)=> {
     const product = new Product({
       id:req.body.id,
@@ -124,3 +125,15 @@ app.post('/addproduct', async (req, res)=> {
       name:req.body.name,
     })
 })
+
+// Creating Endpoint for Removing Products
+
+app.post('/removeproduct',async (req,res)=> {
+	await Product.findOneAndDelete({id:req.body.id});
+	console.log("Removed");
+	res.json({
+		success: true,
+		name:req.body.name
+	})
+})
+
