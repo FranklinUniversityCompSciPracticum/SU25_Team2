@@ -1,20 +1,25 @@
- import React from 'react';
-import './hero.css';
+import React from 'react';
+import './Hero.css';
+import paradise from '../Assets/paradise.jpg';
 
-function Hero() {
+const Hero = () => {
   return (
-    <section className="hero">
-      <h1>Welcome to Our Site</h1>
-      <p>
-        Explore our features and join our community for the latest updates and resources.
-      </p>
-      <button>Learn More</button>
-      <img
-        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
-        alt="Hero"
-      />
-    </section>
-  )
-}
+    <div className="hero">
+      <div className="hero-right">
+        <img src={paradise} alt="Paradise" />
+        
+        {/* Text on top of the image */}
+        <p className="hero-text">Welcome To Paradise</p>
+
+        
+        {/* Buttons placed over the image */}
+        <div className="hero-buttons">
+          <a href="#popular" className="hero-button">Explore Popular Items</a>
+          <a href="#new-collections" className="hero-button">Newest Collections</a>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Hero;
