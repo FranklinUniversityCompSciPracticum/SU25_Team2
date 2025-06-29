@@ -10,15 +10,16 @@ const Register = ( ) => {
         <Box 
             className='registration-form'
             component="form"
-            sx={{ '& > :not(style)': { m: 1, width: '40ch' } }}
+            sx={{ '& > :not(style)': { m: 1, width: '40ch'} }}
         >
             <div className='name-entry'>
-                <TextField id="firstname" label="First Name" variant="outlined" />
-                <TextField id="lastname" label="Last Name" variant="outlined" />
+                <TextField className='entry-field' label="First Name" variant="outlined" />
+                <TextField className='entry-field' label="Last Name" variant="outlined" />
             </div>
-            <TextField id="email" label="Email Address" variant="outlined" />
-            <TextField id="username" label="Username" variant="outlined" />
-            <TextField id="password" label="Password" variant="outlined" type="password" />
+            <TextField className='entry-field' label="Email Address" variant="outlined"/>
+            <TextField className='entry-field' label="Username" variant="outlined" />
+            <TextField className='entry-field' label="Password" variant="outlined" type="password" />
+            <TextField className='entry-field' label="Verify Password" variant="outlined" type="password" />
             <Button variant="contained">Register</Button>
             <p className='login-redirect'>Already have an account? Login <Link to='/login'>here</Link> instead</p>
         </Box>
