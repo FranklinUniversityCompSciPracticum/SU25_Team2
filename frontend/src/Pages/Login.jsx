@@ -6,7 +6,7 @@ export default function Login() {
         <div style={{ padding: '20px', textAlign: 'center' }}>
             <h1>Login</h1>
             <p>Input credentials</p>
-            <Link to='/register' className="register-button"><button>Register</button></Link>
+            <Link to='/register' className="register-link"><button>Register</button></Link>
         </div>
     );
 }
