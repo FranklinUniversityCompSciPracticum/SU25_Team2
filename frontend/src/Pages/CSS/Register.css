@@ -1,3 +1,11 @@
+h1 {
+    display: flex;
+    font-size: 2.5rem;
+    font-weight: 600;
+    justify-content: center;
+    color: #333333;
+}
+
 .registration-form {
     display: flex;
     justify-content: center;
@@ -35,4 +43,12 @@
 
 .entry-field .MuiOutlinedInput-input {
     color: #333333;
+}
+
+.login-link {
+    color: #FF6F61;
+}
+
+.register-button {
+    background-color: #009688;
 }
