@@ -25,26 +25,6 @@ h1 {
     font-size: small;
 }
 
-.entry-field .MuiOutlinedInput-notchedOutline{
-    border-color: #009688;
-}
-
-.entry-field .Mui-focused .MuiOutlinedInput-notchedOutline{
-    border-color: #009688;
-}
-
-.entry-field .Mui-focused{
-    color: #009688;
-}
-
-.entry-field .MuiOutlinedInput-root	{
-    background-color: #FAF3E030;
-}
-
-.entry-field .MuiOutlinedInput-input {
-    color: #333333;
-}
-
 .link {
     color: #4CAF50;
 }

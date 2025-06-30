@@ -6,6 +6,31 @@ import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { FormGroup, FormControlLabel, Checkbox} from '@mui/material';
 
+const customTextFieldSx = {
+    '& .MuiOutlinedInput-root': {
+        backgroundColor: '#FAF3E030',
+        color: '#333333',
+        '& fieldset': {
+        borderColor: '#009688',
+        },
+        '&:hover fieldset': {
+        borderColor: '#00796B',
+        },
+        '&.Mui-focused fieldset': {
+        borderColor: '#009688',
+        },
+    },
+    '& .MuiInputLabel-root': {
+        color: '#333333',
+    },
+    '& .Mui-focused .MuiInputLabel-root': {
+        color: '#009688',
+    },
+    input: {
+        color: '#333333',
+    },
+};
+
 const Register = ( ) => {
     const [agreedToTerms, setAgreedToTerms] = useState(false);
     const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
@@ -19,13 +44,36 @@ const Register = ( ) => {
         >
             <h1 className='register-title'>Sign up to stay connected!</h1>
             <div className='name-entry'>
-                <TextField className='entry-field' label="First Name" variant="outlined" />
-                <TextField className='entry-field' label="Last Name" variant="outlined" />
+                <TextField
+                    className='entry-field'
+                    label="First Name"
+                    variant="outlined"
+                    sx={customTextFieldSx}/>
+                <TextField
+                    className='entry-field'
+                    label="Last Name"
+                    variant="outlined"
+                    sx={customTextFieldSx}/>
             </div>
-            <TextField className='entry-field' label="Email Address" variant="outlined"/>
-            <TextField className='entry-field' label="Username" variant="outlined" />
-            <TextField className='entry-field' label="Password" variant="outlined" type="password" />
-            <TextField className='entry-field' label="Verify Password" variant="outlined" type="password" />
+            <TextField
+                className='entry-field'
+                label="Email Address"
+                variant="outlined"
+                sx={customTextFieldSx}/>
+            <TextField className='entry-field'
+                label="Username"
+                variant="outlined"
+                sx={customTextFieldSx}/>
+            <TextField className='entry-field'
+                label="Password"
+                variant="outlined"
+                type="password"
+                sx={customTextFieldSx}/>
+            <TextField className='entry-field'
+                label="Verify Password"
+                variant="outlined"
+                type="password"
+                sx={customTextFieldSx}/>
             <FormGroup className='checkbox-group'>
                 <FormControlLabel
                     required
