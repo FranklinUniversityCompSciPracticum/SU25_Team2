@@ -1,7 +1,8 @@
-import React, { useState} from 'react'
+import React, { useState, useRef} from 'react'
 import './CSS/Register.css'
 import { Link } from 'react-router-dom';
 import { FormGroup, FormControlLabel, Checkbox, Button, TextField, Box} from '@mui/material';
+import ValidatedTextField from '../Components/ValidatedTextField/ValidatedTextField';
 
 // using this but would like to implement a custom theme in the future
 // https://mui.com/material-ui/customization/theming/
@@ -28,6 +29,22 @@ const customTextFieldSx = {
     input: {
         color: '#333333',
     },
+    "& .MuiInputLabel-root.Mui-error": {
+        color: "#FF6F61",
+    },
+    "& .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline": {
+        border: "2px solid #FF6F61",
+    },
+    "& .MuiFormHelperText-root.Mui-error": {
+        color: "#FF6F61",
+    },
+};
+
+//these functions are passed to a ValidatedTextField to determine if an entry is valid
+const emailValidator = value => {
+    if (!/^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+$/.test(value))
+        return "Invalid email address";
+    return false;
 };
 
 const Register = ( ) => {
@@ -35,6 +52,8 @@ const Register = ( ) => {
     const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
     const [showTermsError, setShowTermsError] = useState(false);
     const [showPrivacyError, setShowPrivacyError] = useState(false);
+
+    const fieldValid = useRef({ email: false });
 
     return (
         <Box 
@@ -50,42 +69,46 @@ const Register = ( ) => {
                     variant="outlined"
                     sx={customTextFieldSx}
                     required
-                    />
+                />
                 <TextField
                     className='entry-field'
                     label="Last Name"
                     variant="outlined"
                     sx={customTextFieldSx}
                     required
-                    />
+                />
             </div>
-            <TextField
+            <ValidatedTextField
                 className='entry-field'
-                label="Email Address"
-                variant="outlined"
+                label="Email"
                 sx={customTextFieldSx}
                 required
-                />
-            <TextField className='entry-field'
+                variant="outlined"
+                validator={emailValidator}
+                onChange={isValid => (fieldValid.current.email = isValid)}
+            />
+            <TextField
+                className='entry-field'
                 label="Username"
                 variant="outlined"
                 sx={customTextFieldSx}
                 required
-                />
-            <TextField className='entry-field'
+            />
+            <TextField
+                className='entry-field'
                 label="Password"
                 variant="outlined"
                 type="password"
                 sx={customTextFieldSx}
                 required
-                />
+            />
             <TextField className='entry-field'
                 label="Verify Password"
                 variant="outlined"
                 type="password"
                 sx={customTextFieldSx}
                 required
-                />
+            />
             <FormGroup className='checkbox-group'>
                 <FormControlLabel
                     required
