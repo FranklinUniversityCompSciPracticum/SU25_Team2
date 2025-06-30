@@ -1,4 +1,4 @@
-import React, { useState, useRef} from 'react'
+import { useState, useRef} from 'react'
 import './CSS/Register.css'
 import { Link } from 'react-router-dom';
 import { FormGroup, FormControlLabel, Checkbox, Button, TextField, Box} from '@mui/material';
@@ -40,20 +40,45 @@ const customTextFieldSx = {
     },
 };
 
-//these functions are passed to a ValidatedTextField to determine if an entry is valid
-const emailValidator = value => {
-    if (!/^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+$/.test(value))
-        return "Invalid email address";
-    return false;
-};
-
 const Register = ( ) => {
+    // https://muhimasri.com/blogs/mui-validation/ guide on form validation with MUI
     const [agreedToTerms, setAgreedToTerms] = useState(false);
     const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
     const [showTermsError, setShowTermsError] = useState(false);
     const [showPrivacyError, setShowPrivacyError] = useState(false);
 
-    const fieldValid = useRef({ email: false });
+    // using useRef over useState to prevent redundant rerenders of every ValidatedTextField whenever a single field is changed
+    const fieldValid = useRef({ email: false, firstName: false, lastName: false, password: false });
+    const passwordValue = useRef('');
+
+    // these functions are passed to a ValidatedTextField to determine if an entry is valid
+    const emailValidator = value => {
+        if (!/^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+$/.test(value)) {
+            return "Invalid email address";
+        }
+        return false;
+    };
+
+    const nameValidator = value => {
+        if (!/^[a-zA-Z]+$/.test(value)) {
+            return "Name must contain only letters";
+        }
+        return false;
+    }
+
+    const passwordReqValidator = value => {
+        if (value.length < 8) {
+            return "Password must be at least 8 characters long"
+        }
+        return false;
+    }
+
+    const passwordMatchValidator = (value) => {
+        if (value !== passwordValue.current) {
+            return "Passwords do not match";
+        }
+        return false;
+    };
 
     return (
         <Box 
@@ -63,19 +88,23 @@ const Register = ( ) => {
         >
             <h1 className='register-title'>Sign up to stay connected!</h1>
             <div className='name-entry'>
-                <TextField
+                <ValidatedTextField
                     className='entry-field'
                     label="First Name"
-                    variant="outlined"
                     sx={customTextFieldSx}
                     required
+                    variant="outlined"
+                    validator={nameValidator}
+                    onChange={isValid => (fieldValid.current.firstName = isValid)}
                 />
-                <TextField
+                <ValidatedTextField
                     className='entry-field'
                     label="Last Name"
-                    variant="outlined"
                     sx={customTextFieldSx}
                     required
+                    variant="outlined"
+                    validator={nameValidator}
+                    onChange={isValid => (fieldValid.current.lastName = isValid)}
                 />
             </div>
             <ValidatedTextField
@@ -94,20 +123,27 @@ const Register = ( ) => {
                 sx={customTextFieldSx}
                 required
             />
-            <TextField
+            <ValidatedTextField
                 className='entry-field'
                 label="Password"
-                variant="outlined"
-                type="password"
                 sx={customTextFieldSx}
+                type="password"
                 required
+                variant="outlined"
+                validator={passwordReqValidator}
+                onChange={(isValid, value) => {
+                    fieldValid.current.password = isValid;
+                    passwordValue.current = value;
+                }}
             />
-            <TextField className='entry-field'
+            <ValidatedTextField
+                className='entry-field'
                 label="Verify Password"
-                variant="outlined"
-                type="password"
                 sx={customTextFieldSx}
+                type="password"
                 required
+                variant="outlined"
+                validator={passwordMatchValidator}
             />
             <FormGroup className='checkbox-group'>
                 <FormControlLabel
@@ -123,9 +159,9 @@ const Register = ( ) => {
                                     <Link className='link' to="/terms">
                                         Terms and Conditions
                                     </Link>
-                                </span>
-                            }
-                        />
+                            </span>
+                        }
+                />
                     {showTermsError && (
                         <p className="error-message">
                             You must agree to the Terms of Use to register.
@@ -144,9 +180,9 @@ const Register = ( ) => {
                                 <Link className='link' to="/privacy">
                                     Privacy Policy
                                 </Link>
-                            </span>
-                        } 
-                    />
+                        </span>
+                    } 
+                />
                     {showPrivacyError && (
                         <p className="error-message">
                             You must agree to the Privacy Policy to register.

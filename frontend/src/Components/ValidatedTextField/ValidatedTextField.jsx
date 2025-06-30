@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import { TextField } from '@mui/material';
 
-const ValidatedTextField = ({ label, validator, onChange, sx, required, variant }) => {
+const ValidatedTextField = ({ label, validator, onChange, sx, required, variant, type }) => {
 
     const [value, setValue] = useState("");
     const [error, setError] = useState(false);
 
-    const handleChange = e => {
+    const handleChange = (e) => {
         const newValue = e.target.value;
-        const errorMessage = validator(newValue);
+        const errorMessage = validator ? validator(newValue) : false;
         setValue(newValue);
         setError(errorMessage);
-        onChange(!errorMessage);
+        onChange?.(!errorMessage, newValue);
     };
 
     return (
@@ -24,6 +24,7 @@ const ValidatedTextField = ({ label, validator, onChange, sx, required, variant 
             sx = {sx}
             required = {required}
             variant = {variant}
+            type = {type}
         />
     );
 };
