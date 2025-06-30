@@ -22,7 +22,7 @@ const customTextFieldSx = {
     '& .MuiInputLabel-root': {
         color: '#333333',
     },
-    '& .Mui-focused .MuiInputLabel-root': {
+    '& .MuiInputLabel-root.Mui-focused ': {
         color: '#009688',
     },
     input: {
@@ -33,7 +33,8 @@ const customTextFieldSx = {
 const Register = ( ) => {
     const [agreedToTerms, setAgreedToTerms] = useState(false);
     const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
-    const [showError, setShowError] = useState(false);
+    const [showTermsError, setShowTermsError] = useState(false);
+    const [showPrivacyError, setShowPrivacyError] = useState(false);
 
     return (
         <Box 
@@ -47,32 +48,44 @@ const Register = ( ) => {
                     className='entry-field'
                     label="First Name"
                     variant="outlined"
-                    sx={customTextFieldSx}/>
+                    sx={customTextFieldSx}
+                    required
+                    />
                 <TextField
                     className='entry-field'
                     label="Last Name"
                     variant="outlined"
-                    sx={customTextFieldSx}/>
+                    sx={customTextFieldSx}
+                    required
+                    />
             </div>
             <TextField
                 className='entry-field'
                 label="Email Address"
                 variant="outlined"
-                sx={customTextFieldSx}/>
+                sx={customTextFieldSx}
+                required
+                />
             <TextField className='entry-field'
                 label="Username"
                 variant="outlined"
-                sx={customTextFieldSx}/>
+                sx={customTextFieldSx}
+                required
+                />
             <TextField className='entry-field'
                 label="Password"
                 variant="outlined"
                 type="password"
-                sx={customTextFieldSx}/>
+                sx={customTextFieldSx}
+                required
+                />
             <TextField className='entry-field'
                 label="Verify Password"
                 variant="outlined"
                 type="password"
-                sx={customTextFieldSx}/>
+                sx={customTextFieldSx}
+                required
+                />
             <FormGroup className='checkbox-group'>
                 <FormControlLabel
                     required
@@ -88,8 +101,13 @@ const Register = ( ) => {
                                         Terms and Conditions
                                     </Link>
                                 </span>
-                            } 
+                            }
                         />
+                    {showTermsError && (
+                        <p className="error-message">
+                            You must agree to the Terms of Use to register.
+                        </p>
+                    )}
                 <FormControlLabel
                     required
                     control={
@@ -106,6 +124,11 @@ const Register = ( ) => {
                             </span>
                         } 
                     />
+                    {showPrivacyError && (
+                        <p className="error-message">
+                            You must agree to the Privacy Policy to register.
+                        </p>
+                    )}
             </FormGroup>
             <Button
                 className='register-button'
@@ -113,20 +136,12 @@ const Register = ( ) => {
                 sx={{ backgroundColor: '#009688', '&:hover': { backgroundColor: '#00796B' } }}
                 onClick={(e) => {
                     e.preventDefault();
-                    if (!agreedToTerms || !agreedToPrivacy) {
-                        setShowError(true);
-                    } else {
-                        setShowError(false);
-                    }
+                    setShowTermsError(!agreedToTerms);
+                    setShowPrivacyError(!agreedToPrivacy);
                 }}
             >
                 Register
             </Button>
-            {showError && (
-                <p className="error-message">
-                    You must agree to the Terms and Privacy Policy to register.
-                </p>
-            )}
             <p className='login-redirect'>Already have an account? Login <Link className='link' to='/login'>here</Link> instead</p>
         </Box>
     )
