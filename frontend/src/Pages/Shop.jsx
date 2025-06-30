@@ -3,6 +3,7 @@ import NewsLetter from '../Components/NewsLetter/NewsLetter';
 import Popular from '../Components/Popular/Popular';
 import NewCollections from '../Components/NewCollections/NewCollections'
 import Hero from '../Components/Hero/Hero';
+import Offers from '../Components/Offers/Offers';
 
 export default function Shop() {
 
@@ -22,6 +23,9 @@ export default function Shop() {
             </div>
             <div id="new-collections">
                 <NewCollections />
+            </div>
+            <div id="offers">
+                <Offers />
             </div>
             <hr />
             {showNewsletter && <NewsLetter onClose={handleClose} />}
