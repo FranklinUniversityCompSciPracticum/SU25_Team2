@@ -46,6 +46,7 @@ let all_product = [
     image: mens_1,
     new_price: 60.0,
     old_price: 85.5,
+    description: "A stylish yellow state park varsity jacket that adds a pop of color to your wardrobe.",
   },
   {
     id: 2,
@@ -54,6 +55,7 @@ let all_product = [
     image: mens_2,
     new_price: 30.0,
     old_price: 35.5,
+    description: "A stylish orange and blue sweater that adds a touch of elegance to your casual wardrobe.",
   },
   {
     id: 3,
@@ -62,6 +64,7 @@ let all_product = [
     image: mens_3,
     new_price: 32.0,
     old_price: 40.5,
+    description: "A stylish navy blue cropped cardigan that adds a touch of sophistication to your casual wardrobe.",
   },
   {
     id: 4,
@@ -70,6 +73,7 @@ let all_product = [
     image: mens_4,
     new_price: 120.0,
     old_price: 150.0,
+    description: "A stylish light beige slim fit linen jacket that adds a touch of elegance to your wardrobe.",
   },
   {
     id: 5,
@@ -78,6 +82,7 @@ let all_product = [
     image: mens_5,
     new_price: 55.0,
     old_price: 85.5,
+    description: "A stylish orange textured jacket that adds a pop of color to your wardrobe.",
   },
   {
     id: 6,
@@ -86,6 +91,7 @@ let all_product = [
     image: mens_6,
     new_price: 85.0,
     old_price: 110.5,
+    description: "A stylish modern fit plaid linen blend sport coat that adds a touch of sophistication to your wardrobe.",
   },
   {
     id: 7,
@@ -94,6 +100,7 @@ let all_product = [
     image: mens_7,
     new_price: 60.0,
     old_price: 70.5,
+    description: "A stylish emerald green zipper jacket that adds a pop of color to your wardrobe.",
   },
   {
     id: 8,
@@ -102,6 +109,7 @@ let all_product = [
     image: mens_8,
     new_price: 45.0,
     old_price: 55.5,
+    description: "A stylish navy blue and green cropped cardigan that adds a touch of elegance to your casual wardrobe.",
   },
   {
     id: 9,
@@ -110,6 +118,7 @@ let all_product = [
     image: mens_9,
     new_price: 35.0,
     old_price: 50.5,
+    description: "A stylish patterned zip sweater polo that adds a touch of sophistication to your casual wardrobe.",
   },
   {
     id: 10,
@@ -118,6 +127,7 @@ let all_product = [
     image: mens_10,
     new_price: 25.0,
     old_price: 30.5,
+    description: "A stylish blue and green sweater that adds a pop of color to your wardrobe.",
   },
   {
     id: 11,
@@ -126,6 +136,7 @@ let all_product = [
     image: mens_11,
     new_price: 30.0,
     old_price: 50.5,
+    description: "A classic slim fit white polo that adds a touch of elegance to your casual wardrobe.",
   },
   {
     id: 12,
@@ -134,6 +145,7 @@ let all_product = [
     image: mens_12,
     new_price: 25.0,
     old_price: 30.5,
+    description: "A classic forest green polo that adds a touch of sophistication to your casual wardrobe.",
   },
   {
     id: 13,
@@ -142,6 +154,7 @@ let all_product = [
     image: womens_1,
     new_price: 50.0,
     old_price: 80.5,
+    description: "A trendy sleeveless cropped puffer vest that adds a stylish layer to your outfit.",
   },
   {
     id: 14,
@@ -150,6 +163,7 @@ let all_product = [
     image: womens_2,
     new_price: 85.0,
     old_price: 120.5,
+    description: "A stylish shaggy pink faux fur jacket that adds a touch of glamour to your winter wardrobe.",
   },
   {
     id: 15,
@@ -158,6 +172,7 @@ let all_product = [
     image: womens_3,
     new_price: 20.0,
     old_price: 30.5,
+    description: "A stylish blue hollow out crochet top that adds a touch of elegance to your summer wardrobe.",
   },
   {
     id: 16,
@@ -166,6 +181,7 @@ let all_product = [
     image: womens_4,
     new_price: 70.0,
     old_price: 90.0,
+    description: "A stylish and warm puffer jacket in a lovely pink color, perfect for chilly days.",
   },
   {
     id: 17,
@@ -174,6 +190,7 @@ let all_product = [
     image: womens_5,
     new_price: 55.0,
     old_price: 70.5,
+    description: "A vibrant orange summer dress with a unique pattern, ideal for warm weather outings.",
   },
   {
     id: 18,
@@ -182,6 +199,7 @@ let all_product = [
     image: womens_6,
     new_price: 15.0,
     old_price: 20.5,
+    description: "A classic striped blue shirt that adds a touch of elegance to any outfit.",
   },
   {
     id: 19,
@@ -190,6 +208,7 @@ let all_product = [
     image: womens_7,
     new_price: 55.0,
     old_price: 70.5,
+    description: "A chic beige jacket with a contrast collar, perfect for layering in style.",
   },
   {
     id: 20,
@@ -198,6 +217,7 @@ let all_product = [
     image: womens_8,
     new_price: 25.0,
     old_price: 40.5,
+    description: "A trendy cropped white vest that adds a modern touch to your wardrobe.",
   },
   {
     id: 21,
@@ -206,6 +226,7 @@ let all_product = [
     image: womens_9,
     new_price: 45.0,
     old_price: 60.5,
+    description: "A cozy light brown sweater, perfect for casual outings or lounging at home.",
   },
   {
     id: 22,
@@ -214,6 +235,7 @@ let all_product = [
     image: womens_10,
     new_price: 65.0,
     old_price: 80.5,
+    description: "A stylish white and navy blue sports top, perfect for workouts or casual outings.",
   },
   {
     id: 23,
@@ -222,6 +244,7 @@ let all_product = [
     image: womens_11,
     new_price: 35.0,
     old_price: 50.5,
+    description: "A cozy purple and cream striped sweater, perfect for adding a pop of color to your winter wardrobe.",
   },
   {
     id: 24,
@@ -230,6 +253,7 @@ let all_product = [
     image: womens_12,
     new_price: 45.0,
     old_price: 60.5,
+    description: "A classic red turtleneck that adds warmth and style to your winter wardrobe.",
   },
   {
     id: 27,
@@ -238,6 +262,7 @@ let all_product = [
     image: kids_1,
     new_price: 85.0,
     old_price: 120.5,
+    description: "A cozy half zipped beige sweater, perfect for keeping warm during chilly days.",
   },
   {
     id: 28,
@@ -246,6 +271,7 @@ let all_product = [
     image: kids_2,
     new_price: 85.0,
     old_price: 120.5,
+    description: "A stylish plum t-shirt, perfect for casual outings or school wear.",
   },
   {
     id: 29,
@@ -254,6 +280,7 @@ let all_product = [
     image: kids_3,
     new_price: 85.0,
     old_price: 120.5,
+    description: "A stylish cadet gray button front knit shirt, perfect for casual outings or school wear.",
   },
   {
     id: 30,
@@ -262,6 +289,7 @@ let all_product = [
     image: kids_4,
     new_price: 85.0,
     old_price: 120.5,
+    description: "A stylish faux leather shearling biker jacket, perfect for adding a touch of edge to your child's outfit.",
   },
   {
     id: 31,
@@ -270,6 +298,7 @@ let all_product = [
     image: kids_5,
     new_price: 85.0,
     old_price: 120.5,
+    description: "A vibrant atomic tangerine t-shirt, perfect for adding a pop of color to your child's wardrobe.",
   },
   {
     id: 32,
@@ -278,6 +307,7 @@ let all_product = [
      image: kids_6,
     new_price: 85.0,
     old_price: 120.5,
+    description: "A lightweight green plaid flannel shirt, perfect for layering or casual wear.",
   },
   {
     id: 33,
@@ -286,6 +316,7 @@ let all_product = [
     image: kids_7,
     new_price: 85.0,
     old_price: 120.5,
+    description: "A classic sky blue polo shirt, perfect for casual outings or school wear.",
   },
   {
     id: 34,
@@ -294,6 +325,7 @@ let all_product = [
     image: kids_8,
     new_price: 85.0,
     old_price: 120.5,
+    description: "A classic long sleeve red striped shirt, perfect for casual outings or school wear.",
   },
   {
     id: 35,
@@ -302,6 +334,7 @@ let all_product = [
     image: kids_9,
     new_price: 85.0,
     old_price: 120.5,
+    description: "A sporty navy blue and red striped tracksuit, perfect for active kids who love to play.",
   },
   {
     id: 36,
@@ -310,6 +343,7 @@ let all_product = [
     image: kids_10,
     new_price: 85.0,
     old_price: 120.5,
+    description: "A stylish metallic rain jacket that keeps your child dry and fashionable during rainy days.",
   },
   {
     id: 37,
@@ -318,6 +352,7 @@ let all_product = [
     image: kids_11,
     new_price: 85.0,
     old_price: 120.5,
+    description: "A stylish red, white, and blue button-up shirt, perfect for casual outings or special occasions.",
   },
    {
     id: 38,
@@ -326,6 +361,7 @@ let all_product = [
     image: kids_12,
     new_price: 85.0,
     old_price: 120.5,
+    description: "A cozy green and navy blue hooded sweatshirt, perfect for keeping warm during chilly days.",
   },
 ];
 
