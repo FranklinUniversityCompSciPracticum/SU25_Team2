@@ -1,10 +1,7 @@
 import React, { useState} from 'react'
 import './CSS/Register.css'
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
-import { FormGroup, FormControlLabel, Checkbox} from '@mui/material';
+import { FormGroup, FormControlLabel, Checkbox, Button, TextField, Box} from '@mui/material';
 
 // using this but would like to implement a custom theme in the future
 // https://mui.com/material-ui/customization/theming/
