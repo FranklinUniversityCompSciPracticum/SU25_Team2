@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'Magazine';
+  src: url('../Assets/Halycoon\ Script\ OTF.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Monsterlight';
+  src: url('../Assets/Monsterlight.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.hero {
+  height: 80vh;
+  display: flex;
+  position: relative; /* To position the buttons relative to the container */
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Ensure it takes full height of the parent */
+  position: relative; /* To allow absolute positioning of buttons inside this container */
+}
+
+.hero-right img {
+  width: 100%;
+  height: 100%; /* Make the image fill the container */
+  object-fit: cover; /* Ensure the image fills the space proportionally */
+}
+
+.hero-buttons {
+  position: absolute; /* Position buttons on top of the image */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for true centering */
+  display: flex;
+  gap: 20px;
+}
+
+.hero-button {
+  padding: 15px 30px;
+  background-color: #2c7896;  /* Button background color */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #73c1e0; /* Darker color on hover */
+  color: #273b30;
+}
+
+
+
+.hero-text {
+  position: absolute; /* Position text over the image */
+  top: 20%; /* Adjust to center vertically or wherever you'd like */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 100px; /* Adjust size of the text */
+  font-family: 'Monsterlight';
+  font-weight: bold;
+  color: white; /* Text color */
+  letter-spacing: 5px; /* Increase space between letters */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Optional: adds shadow for better readability */
+}
