@@ -49,10 +49,6 @@ h1 {
     color: #4CAF50;
 }
 
-.register-button {
-    background-color: #009688;
-}
-
 .checkboxes {
     display: flex;
     flex-direction: column;
@@ -79,4 +75,8 @@ h1 {
 
 .checkbox-group .MuiCheckbox-root {
     color: #009688;
+}
+
+.error-message {
+    color: #FF6F61;
 }
