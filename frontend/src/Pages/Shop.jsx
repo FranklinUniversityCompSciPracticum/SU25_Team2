@@ -24,6 +24,9 @@ export default function Shop() {
             <div id="new-collections">
                 <NewCollections />
             </div>
+            <div id="offers">
+                <Offers />
+            </div>
             <hr />
             {showNewsletter && <NewsLetter onClose={handleClose} />}
         </div>
