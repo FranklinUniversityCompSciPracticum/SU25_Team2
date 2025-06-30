@@ -1,29 +1,31 @@
 .Offers {
-  display: flex;
-  justify-content: center; /* Horizontal centering */
-  align-items: center;     /* Vertical centering */
-  min-height: 100vh;       /* Full viewport height */
-  width: 100%;             /* Full width */
-  margin: 0;
-  padding: 0;
-  background-color: #f8f9fa; /* Optional background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.Offers ul {
-  list-style: none;        /* Remove bullet points */
-  padding: 0;
-  margin: 0;
-  text-align: center;      /* Center text content */
+.offer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Adds space between elements */
 }
 
-.Offers li {
-  margin: 1rem 0;          /* Spacing between list items */
+.offer-image {
+    max-width: 100%; /* Ensures image doesn't overflow */
+    height: auto; /* Maintains aspect ratio */
 }
 
-.test {
-  display: inline-block;   /* Allows proper centering of content */
-  padding: 2rem;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.offer-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.offer-button:hover {
+    background-color: #45a049;
 }

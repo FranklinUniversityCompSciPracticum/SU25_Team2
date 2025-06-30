@@ -1,26 +1,20 @@
 import React from 'react';
 import './Offers.css';
-import Item from '../Item/Item';
-import data_product from '../Assets/data';
-const offer = data_product[0];
+import data_product from '../Assets/exclusive_image.png';
 
+const Offers = () => {
 
-const Offers = (props) => {
-    const { product } = props;
+    const handleClick = () => {
+        alert('Button clicked!');
+    };
 
     return (
         <nav className='Offers'>
-            <ul>
-                <li>Special, limited time offer! Get it while you can!</li>
-                <Item
-              id={offer.id}
-              name={offer.name}
-              image={offer.image}
-              new_price={offer.new_price}
-              old_price={offer.old_price}
-            />
-          
-            </ul>
+            <div className="offer-content">
+                <a>Special, limited time offer! Get it while you can!</a>
+                <img src={data_product} alt="Special offer" className="offer-image" />
+                <button onClick={handleClick} className="offer-button">Click Me</button>
+            </div>
         </nav>
     );
 }
