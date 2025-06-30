@@ -6,6 +6,8 @@ import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { FormGroup, FormControlLabel, Checkbox} from '@mui/material';
 
+// using this but would like to implement a custom theme in the future
+// https://mui.com/material-ui/customization/theming/
 const customTextFieldSx = {
     '& .MuiOutlinedInput-root': {
         backgroundColor: '#FAF3E030',
