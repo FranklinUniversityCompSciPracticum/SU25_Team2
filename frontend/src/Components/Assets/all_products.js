@@ -238,6 +238,7 @@ let all_product = [
     image: kids_1,
     new_price: 85.0,
     old_price: 120.5,
+    description: "A fashionable half-zipped sweater for kids, great for cooler weather. Made with soft, breathable fabric makes this a comfortable fit that kids will love.",
   },
   {
     id: 28,
@@ -246,6 +247,7 @@ let all_product = [
     image: kids_2,
     new_price: 85.0,
     old_price: 120.5,
+    description: "A bright plum-colored tee that's both fun and functional. Lightweight and easy to wear for everyday adventures.",
   },
   {
     id: 29,
@@ -254,6 +256,7 @@ let all_product = [
     image: kids_3,
     new_price: 85.0,
     old_price: 120.5,
+    description: "A stylish cadet gray knit shirt with button-front design. Perfect for layering or wearing solo in casual settings.",
   },
   {
     id: 30,
@@ -262,6 +265,7 @@ let all_product = [
     image: kids_4,
     new_price: 85.0,
     old_price: 120.5,
+    description: "Trendy faux leather biker jacket with cozy shearling lining. Adds edge and warmth to any kid’s wardrobe.",
   },
   {
     id: 31,
@@ -270,14 +274,16 @@ let all_product = [
     image: kids_5,
     new_price: 85.0,
     old_price: 120.5,
+    description: "Vibrant and fun, this Atomic Tangerine tee is ideal for kids who love bold colors and comfy fits.",
   },
   {
     id: 32,
     name: "Lightweight Green Plaid Flannel Shirt - Kid",
     category: "kid",
-     image: kids_6,
+    image: kids_6,
     new_price: 85.0,
     old_price: 120.5,
+    description: "Classic green plaid flannel with a lightweight feel. Versatile enough for school or weekend play.",
   },
   {
     id: 33,
@@ -286,6 +292,7 @@ let all_product = [
     image: kids_7,
     new_price: 85.0,
     old_price: 120.5,
+    description: "A crisp sky-blue polo that offers comfort and a polished look. Great for dress-up or casual wear.",
   },
   {
     id: 34,
@@ -294,6 +301,7 @@ let all_product = [
     image: kids_8,
     new_price: 85.0,
     old_price: 120.5,
+    description: "Bright red stripes make this long sleeve shirt a standout. Soft cotton ensures all-day comfort.",
   },
   {
     id: 35,
@@ -302,6 +310,7 @@ let all_product = [
     image: kids_9,
     new_price: 85.0,
     old_price: 120.5,
+    description: "Sporty and comfy, this tracksuit features navy and red stripes. Ideal for active play and staying cozy.",
   },
   {
     id: 36,
@@ -310,6 +319,7 @@ let all_product = [
     image: kids_10,
     new_price: 85.0,
     old_price: 120.5,
+    description: "Stay dry in style with this fun metallic rain jacket. Water-resistant and lightweight for rainy days.",
   },
   {
     id: 37,
@@ -318,14 +328,16 @@ let all_product = [
     image: kids_11,
     new_price: 85.0,
     old_price: 120.5,
+    description: "Patriotic style meets everyday wear with this red, white, and blue button-up. Great for family outings.",
   },
-   {
+  {
     id: 38,
     name: "Green & Navy Blue Hooded Sweatshirt - Kid",
     category: "kid",
     image: kids_12,
     new_price: 85.0,
     old_price: 120.5,
+    description: "A cozy hooded sweatshirt in green and navy tones. Great for layering on chilly school days.",
   },
 ];
 
