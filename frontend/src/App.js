@@ -9,6 +9,7 @@ import Footer from './Components/Footer/Footer';
 import ShopCategory from './Pages/ShopCategory';
 import Product from './Pages/Product'
 import Register from './Pages/Register'
+import About from './Pages/About';
 
 // MORE IMPORTS WILL GO HERE.
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/kids" element={<ShopCategory category="kid" />} />
           <Route path="/product/:productId" element={<Product />} />
           <Route path="/register" element={<Register />} />  
+          <Route path="/about" element={<About />} />
           {/* Add your routes here, example: <Route path="/about" element={<About />} /> */}
           {/*<Route path="/register"
           {/* Add more routes as needed */}
