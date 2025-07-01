@@ -1,7 +1,7 @@
 import { useState, useRef} from 'react'
 import './CSS/Register.css'
 import { Link } from 'react-router-dom';
-import { FormGroup, FormControlLabel, Checkbox, Button, TextField, Box} from '@mui/material';
+import { FormGroup, FormControlLabel, Checkbox, Button, Box} from '@mui/material';
 import ValidatedTextField from '../Components/ValidatedTextField/ValidatedTextField';
 
 // using this but would like to implement a custom theme in the future

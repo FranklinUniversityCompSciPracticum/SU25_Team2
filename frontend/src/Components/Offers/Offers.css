@@ -1,31 +1,61 @@
 .Offers {
-    display: flex;
-    justify-content: center;
+    margin: 100px auto;
+    width: 65%;
+    display: flex; /* Side-by-side layout instead of top down*/
     align-items: center;
+    justify-content: center; 
+    gap: 30px; /* spacing between left and right */
+    padding: 0px 8%;
+    margin-bottom: 50px;
+    background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%); /* Gradient background for styling */
+    border-radius: 8px;
 }
 
-.offer-content {
+.offers-left {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px; /* Adds space between elements */
+    flex-direction: column; /* Stacking the text and button vertically and centering all */
+    align-items: center; 
+    text-align: center; 
+    gap: 15px;
 }
 
-.offer-image {
-    max-width: 100%; /* Ensures image doesn't overflow */
-    height: auto; /* Maintains aspect ratio */
+.offers-left h1 {
+    color: #171717;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.offers-left p {
+    color: #171717;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
 }
 
 .offer-button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
+    width: 200px;
+    height: 50px;
+    border-radius: 35px;
+    background: #ff4141;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    color: white;
     font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
 }
 
 .offer-button:hover {
-    background-color: #45a049;
+    background: #45a049;
+}
+
+.offers-right {
+    display: flex;
+    align-items: center; /* Image container */
+}
+
+.offer-image {
+    width: 320px;
+    height: auto;
+    padding-top: 20px;
 }
