@@ -48,7 +48,7 @@ const Register = ( ) => {
     const [showPrivacyError, setShowPrivacyError] = useState(false);
 
     // using useRef over useState to prevent redundant rerenders of every ValidatedTextField whenever a single field is changed
-    const fieldValid = useRef({ email: false, firstName: false, lastName: false, password: false });
+    const fieldValid = useRef({ email: false, firstName: false, lastName: false, username:false, password: false });
     const passwordValue = useRef('');
 
     // these functions are passed to a ValidatedTextField to determine if an entry is valid
@@ -62,6 +62,13 @@ const Register = ( ) => {
     const nameValidator = value => {
         if (!/^[a-zA-Z]+$/.test(value)) {
             return "Name must contain only letters";
+        }
+        return false;
+    }
+
+    const usernameValidator = value => {
+        if (!/^[a-zA-Z0-9]+$/.test(value)) {
+            return "Username must contain only letters or numbers";
         }
         return false;
     }
@@ -116,12 +123,14 @@ const Register = ( ) => {
                 validator={emailValidator}
                 onChange={isValid => (fieldValid.current.email = isValid)}
             />
-            <TextField
+            <ValidatedTextField
                 className='entry-field'
-                label="Username"
-                variant="outlined"
+                label="username"
                 sx={customTextFieldSx}
                 required
+                variant="outlined"
+                validator={usernameValidator}
+                onChange={isValid => (fieldValid.current.username = isValid)}
             />
             <ValidatedTextField
                 className='entry-field'
