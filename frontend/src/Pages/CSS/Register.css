@@ -1,0 +1,62 @@
+h1 {
+    display: flex;
+    font-size: 2.5rem;
+    font-weight: 600;
+    justify-content: center;
+    color: #333333;
+}
+
+.registration-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 50vh;
+    min-height: 50vh;
+    padding: 5px;
+    flex-direction: column;
+}
+
+.name-entry{
+    display: flex;
+    gap: 16px;
+}
+
+.login-redirect {
+    font-size: small;
+}
+
+.link {
+    color: #4CAF50;
+}
+
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.privacy-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.terms-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox-group .MuiFormControlLabel-root {
+    color: #333333;
+}
+
+.checkbox-group .MuiCheckbox-root {
+    color: #009688;
+}
+
+.error-message {
+    color: #FF6F61;
+}
