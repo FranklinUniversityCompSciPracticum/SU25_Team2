@@ -18,8 +18,8 @@ const Footer = () => {
             </div>
             <ul className="footer-links">
                 <li><Link to="/about">About Us</Link></li> 
-                <li>Gift Cards</li>
-                <li>Blog</li>
+                <li><Link to="/testimonials">Testimonials</Link></li> 
+                <li><Link to="/contact">Contact</Link></li> 
                 <li><Link to="/login">My Account</Link></li>
             </ul>
             <div className="footer-social-icons">

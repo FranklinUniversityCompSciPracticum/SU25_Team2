@@ -10,6 +10,8 @@ import ShopCategory from './Pages/ShopCategory';
 import Product from './Pages/Product'
 import Register from './Pages/Register'
 import About from './Pages/About';
+import Contact from './Pages/Contact';
+import Testimonials from './Pages/Testimonials';
 
 // MORE IMPORTS WILL GO HERE.
 
@@ -31,6 +33,8 @@ function App() {
           <Route path="/product/:productId" element={<Product />} />
           <Route path="/register" element={<Register />} />  
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/testimonials" element={<Testimonials />} />
           {/* Add your routes here, example: <Route path="/about" element={<About />} /> */}
           {/*<Route path="/register"
           {/* Add more routes as needed */}
