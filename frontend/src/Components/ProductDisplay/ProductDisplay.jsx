@@ -4,6 +4,7 @@ import './ProductDisplay.css';
 import star_icon from "../Assets/star_icon.png";
 import star_dull_icon from "../Assets/star_dull_icon.png";
 import ProductAddedModal from "../ProductAddedModal/ProductAddedModal";
+import { Link } from 'react-router-dom';
 
 /* This ProductDisplay component displays the product details. It is used in the Product page. 
    The product details are passed as props from the Product page. */
@@ -56,6 +57,11 @@ const ProductDisplay = (props) => {
                 <div className="add-to-cart-container">
                     <button onClick={() => addToCart(product.id)}>ADD TO CART</button>
                     <ProductAddedModal visible={showModal} />
+                </div>
+                <div>
+                    <Link to="/cart">
+                        <button>VIEW CART</button>
+                    </Link>
                 </div>
                 <p className='productdisplay-right-category'>
                     <span>Category :</span> {product.category}

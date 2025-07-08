@@ -1,10 +1,13 @@
 import React from 'react';
+import CartItems from '../Components/CartItems/CartItems';
 
-export default function Login() {
-    return (
-        <div style={{ padding: '20px', textAlign: 'center' }}>
-            <h1>Cart</h1>
-            <p>Items</p>
-        </div>
-    );
+// Corrected, exporting "Cart" instead of "Login".
+// CartItems displays the items in the shopping cart.
+const Cart = () => {
+  return (
+    <div>
+      <CartItems/>
+    </div>
+  );
 }
+export default Cart;
