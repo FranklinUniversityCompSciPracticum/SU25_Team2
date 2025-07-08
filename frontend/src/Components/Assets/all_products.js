@@ -46,6 +46,7 @@ let all_product = [
     image: mens_1,
     new_price: 60.0,
     old_price: 85.5,
+    description: "A stylish and soft varsity jacket, perfect for casual outinga ns cool weather"
   },
   {
     id: 2,
@@ -54,6 +55,8 @@ let all_product = [
     image: mens_2,
     new_price: 30.0,
     old_price: 35.5,
+    description: "Bold style grabs the eye in this ridiculously soft sweater"
+
   },
   {
     id: 3,
@@ -62,6 +65,8 @@ let all_product = [
     image: mens_3,
     new_price: 32.0,
     old_price: 40.5,
+    description: "Classic and timeless style in a navy blue Cardigan"
+
   },
   {
     id: 4,
@@ -70,6 +75,8 @@ let all_product = [
     image: mens_4,
     new_price: 120.0,
     old_price: 150.0,
+    description: "Slim cut linen jacket is the perfect clean look for summer occasions"
+
   },
   {
     id: 5,
@@ -78,6 +85,8 @@ let all_product = [
     image: mens_5,
     new_price: 55.0,
     old_price: 85.5,
+    description: "Get bold and stay warm in this flamboyant orange jacket with texture"
+
   },
   {
     id: 6,
@@ -86,6 +95,7 @@ let all_product = [
     image: mens_6,
     new_price: 85.0,
     old_price: 110.5,
+    description: "The best fit you will ever experience in this"
   },
   {
     id: 7,
@@ -94,6 +104,7 @@ let all_product = [
     image: mens_7,
     new_price: 60.0,
     old_price: 70.5,
+    description: "Look flashy and bright with this nacket featuring a full zipper"
   },
   {
     id: 8,
@@ -102,6 +113,7 @@ let all_product = [
     image: mens_8,
     new_price: 45.0,
     old_price: 55.5,
+    description: "Classic cardigan look in navy blue and green"
   },
   {
     id: 9,
@@ -110,6 +122,7 @@ let all_product = [
     image: mens_9,
     new_price: 35.0,
     old_price: 50.5,
+    description: "Polo sweater looks great everywhere- with a zipper for comfort"
   },
   {
     id: 10,
@@ -118,6 +131,7 @@ let all_product = [
     image: mens_10,
     new_price: 25.0,
     old_price: 30.5,
+    description: "Gorgeous blue and green sweater for men"
   },
   {
     id: 11,
@@ -126,6 +140,7 @@ let all_product = [
     image: mens_11,
     new_price: 30.0,
     old_price: 50.5,
+    description: "Slim cut fits just right, in white color ideal for summer"
   },
   {
     id: 12,
@@ -134,6 +149,7 @@ let all_product = [
     image: mens_12,
     new_price: 25.0,
     old_price: 30.5,
+    description: "Forest green polo is classy and stylish"
   },
   {
     id: 13,
@@ -142,6 +158,7 @@ let all_product = [
     image: womens_1,
     new_price: 50.0,
     old_price: 80.5,
+    description: "Sleeveless look in a warm and comfy puffy jacket"
   },
   {
     id: 14,
@@ -150,6 +167,7 @@ let all_product = [
     image: womens_2,
     new_price: 85.0,
     old_price: 120.5,
+    description: "Shaggy pink faux fur keeps you warm and comfy"
   },
   {
     id: 15,
@@ -158,6 +176,7 @@ let all_product = [
     image: womens_3,
     new_price: 20.0,
     old_price: 30.5,
+    description: "Crochet tops are coming back in style- get yours"
   },
   {
     id: 16,
@@ -166,6 +185,7 @@ let all_product = [
     image: womens_4,
     new_price: 70.0,
     old_price: 90.0,
+    description: "Pink puffer is warm and stylish"
   },
   {
     id: 17,
@@ -174,6 +194,7 @@ let all_product = [
     image: womens_5,
     new_price: 55.0,
     old_price: 70.5,
+    description: "Pretty orange summer dress is great for summer"
   },
   {
     id: 18,
@@ -182,6 +203,7 @@ let all_product = [
     image: womens_6,
     new_price: 15.0,
     old_price: 20.5,
+    description: "Striped blue shirt looks great everywhere"
   },
   {
     id: 19,
@@ -190,6 +212,7 @@ let all_product = [
     image: womens_7,
     new_price: 55.0,
     old_price: 70.5,
+    description: "Collar jacket will keep you warm and comfy"
   },
   {
     id: 20,
@@ -198,6 +221,7 @@ let all_product = [
     image: womens_8,
     new_price: 25.0,
     old_price: 40.5,
+    description: "Cropped white vest is just awesome- invest now"
   },
   {
     id: 21,
@@ -206,6 +230,7 @@ let all_product = [
     image: womens_9,
     new_price: 45.0,
     old_price: 60.5,
+    description: "Light sweater keeps you warm but not hot"
   },
   {
     id: 22,
@@ -214,6 +239,7 @@ let all_product = [
     image: womens_10,
     new_price: 65.0,
     old_price: 80.5,
+    description: "Sports top is great for all of your sporty activities"
   },
   {
     id: 23,
@@ -222,6 +248,7 @@ let all_product = [
     image: womens_11,
     new_price: 35.0,
     old_price: 50.5,
+    description: "Purple and cream striped sweater is comfy and so stylish"
   },
   {
     id: 24,
@@ -230,6 +257,7 @@ let all_product = [
     image: womens_12,
     new_price: 45.0,
     old_price: 60.5,
+    description: "Nice red turtleneck to keep you warm on chily days"
   },
   {
     id: 27,
