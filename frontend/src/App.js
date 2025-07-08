@@ -17,6 +17,10 @@ import Testimonials from './Pages/Testimonials';
 
 import './App.css';
 
+// Export backend URL and currency for cart components
+export const backend_url = 'http://localhost:4000';
+export const currency = '$';
+
 function App() {
   return (
     <div className="app-container">

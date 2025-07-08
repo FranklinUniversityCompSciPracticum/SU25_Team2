@@ -31,6 +31,11 @@ const ShopContextProvider = (props)=>{
     setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
   }
 
+  // remove all items regardless of quantity
+  const removeAllFromCart = (itemId) => {
+    setCartItems((prev) => ({ ...prev, [itemId]: 0 }));
+  };
+
   const getTotalCartAmount = () => {
   let totalAmount = 0;
   for (const item in cartItems) {
@@ -58,7 +63,7 @@ const getTotalCartItems = () => {
 }
 
 
-   const contextValue = {getTotalCartItems, getTotalCartAmount, all_product,cartItems,addToCart,removeFromCart, showModal};
+   const contextValue = {getTotalCartItems, getTotalCartAmount, all_product,cartItems,addToCart,removeFromCart, removeAllFromCart, showModal};
 
  
   useEffect(() => {
