@@ -46,7 +46,7 @@ let all_product = [
     image: mens_1,
     new_price: 60.0,
     old_price: 85.5,
-    description: "A stylish and soft varsity jacket, perfect for casual outinga ns cool weather"
+    description: "A stylish and soft varsity jacket, perfect for casual outings in cool weather"
   },
   {
     id: 2,
