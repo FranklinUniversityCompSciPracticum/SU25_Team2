@@ -12,6 +12,8 @@ import Register from './Pages/Register'
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Testimonials from './Pages/Testimonials';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 // MORE IMPORTS WILL GO HERE.
 
