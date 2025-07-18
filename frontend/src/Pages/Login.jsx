@@ -3,36 +3,64 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../Pages/CSS/Login.css';
 
 export default function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
+  
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    console.log('Login attempt:', { username, password });
-    // TODO: Add authentication logic here
-    navigate('/dashboard'); // Replace with your actual post-login route
+
+  const changeHandler = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  const login = async () => {
+    console.log("Login Function Executed");
+    console.log(formData);
+    let responseData;
+    await fetch('http://localhost:4000/login',{
+      method: 'POST',
+      headers:{
+        Accept:'application/form-data',
+        'Content-Type':'application/json',
+      },
+      body: JSON.stringify(formData),
+    }).then((response)=> response.json()).then((data)=>responseData=data) 
+
+    if(responseData.success){
+      localStorage.setItem('auth-token',responseData.token);
+      window.location.replace("/");
+    }
+    else {
+      alert(responseData.errors)
+    }
+  }
 
   return (
     <div className="login-container">
       <h1>Login</h1>
-      <form className="login-form" onSubmit={handleLogin}>
+      <form className="login-form">
         <input
           type="text"
+          name="username"
           placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={formData.username}
+          onChange={changeHandler}
           required
         />
         <input
           type="password"
+          name="password"
           placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={formData.password}
+          onChange={changeHandler}
           required
         />
-        <button type="submit">Login</button>
+
+        <button type="submit" onClick={(e) => {
+                    e.preventDefault();
+                    login();
+                }}>Login</button>
         <p className="register-link">
           Don't have an account? <Link to="/register">Register here</Link>
         </p>

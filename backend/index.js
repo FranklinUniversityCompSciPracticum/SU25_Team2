@@ -4,6 +4,7 @@ const port = 4000;
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
@@ -167,54 +168,95 @@ const Users = mongoose.model("User", {
 })
 
 // Creating Endpoint for Registering the User 
-app.post('/signup',async (req,res)=> {
-	let check = await Users.findOne({email:req.body.email});
-	if (check) {
-		return res.status(400).json({success:false,errors:"existing user found with same email address"});
+app.post('/signup', async (req, res) => {
+  try {
+    // Check if the username already exists
+    let checkUsername = await Users.findOne({ name: req.body.username });
+    if (checkUsername) {
+      return res.status(400).json({
+        success: false,
+        errors: "Existing user found with same username",
+      });
+    }
+
+    // Check if the email already exists
+    let checkEmail = await Users.findOne({ email: req.body.email });
+    if (checkEmail) {
+      return res.status(400).json({
+        success: false,
+        errors: "Existing user found with same email address",
+      });
+    }
+
+    // Hash the password
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+
+    // Initialize an empty cart with 300 items
+    let cart = {};
+    for (let i = 0; i < 300; i++) {
+      cart[i] = 0;
+    }
+
+    // Create a new user
+    const user = new Users({
+      name: req.body.username,
+      email: req.body.email,
+      password: hashedPassword,
+      cartData: cart,
+    });
+
+    // Save the new user to the database
+    await user.save();
+
+    // Generate a JWT token
+    const data = {
+      user: {
+        id: user.id,
+      },
+    };
+
+    const token = jwt.sign(data, 'secret_ecom');
+    res.json({ success: true, token });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, errors: "Server Error" });
   }
-	let cart = {};
-	for (let i = 0; i < 300; i++) {
-		cart[i] = 0;
-	}
-	const user = new Users({
-		name:req.body.username,
-		email:req.body.email,
-		password:req.body.password,
-		cartData:cart,
-	})
-	
-	await user.save();
-	
-	const data = {
-		user:{
-			id:user.id
-		}
-	}
-	
-	const token = jwt.sign(data,'secret_ecom');
-	res.json({success:true,token});
 });
 
 // Creating Endpoint for User Login
+app.post('/login', async (req, res) => {
+  try {
+    const { username, password } = req.body;
 
-app.post('/login',async (req,res)=> {
-	let user = await Users.findOne({email:req.body.email});
-	if (user) {
-		const passCompare = req.body.password === user.password;
-		if (passCompare) {
-			const data = {
-				user:{
-					id:user.id
-				}
-			}
-			const token = jwt.sign(data, 'secret_ecom');
-			res.json({success:true,token});
-		}
-		else {
-			res.json({success:false,errors:"Wrong Password"});
-		}
-	}
-	else {
-			res.json({success:false,errors:"Wrong Email Id"});
-		}
-})
+    // Find the user by username instead of email
+    let user = await Users.findOne({ name: username });
+    if (!user) {
+      return res.status(400).json({
+        success: false,
+        errors: "Wrong Username",
+      });
+    }
+
+    // Compare the password
+    const passCompare = await bcrypt.compare(password, user.password);
+    if (!passCompare) {
+      return res.status(400).json({
+        success: false,
+        errors: "Wrong Password",
+      });
+    }
+
+    // Generate a JWT token
+    const data = {
+      user: {
+        id: user.id,
+      },
+    };
+
+    const token = jwt.sign(data, 'secret_ecom');
+    res.json({ success: true, token });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, errors: "Server Error" });
+  }
+});
