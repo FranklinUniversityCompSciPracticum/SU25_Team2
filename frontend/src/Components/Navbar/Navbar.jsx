@@ -40,8 +40,17 @@ const Navbar = () => {
                 </li>
             </ul>
             <div className="nav-login-cart">
-                {localStorage.getItem('auth-token')?<button onClick={()=>{localStorage.removeItem('auth-token');window.location.replace('/')}}>Logout</button>
-                :<Link to='/login' className="nav-login"><button>Login</button></Link>}
+                {localStorage.getItem('auth-token') ? (
+                <div className="nav-login">
+                    <button onClick={() => { localStorage.removeItem('auth-token'); window.location.replace('/') }}>
+                        Logout
+                    </button>
+                </div>
+            ) : (
+                <Link to='/login' className="nav-login">
+                    <button>Login</button>
+                </Link>
+            )}
                 <Link to='/cart'><img src={cart_icon} alt="Cart" className="nav-cart" /></Link>
                 <div className="nav-cart-count">{getTotalCartItems()}</div>
             </div>
