@@ -4,6 +4,7 @@ import Stack from '@mui/material/Stack';
 import TeamMember from '../Components/TeamMember/TeamMember';
 import nDoran from '../Components/Assets/ndoran.png';
 import sTeillon from '../Components/Assets/steillon.jpg';
+import antonia from '../Components/Assets/antonia.png';
 
 export default function About() {
 
@@ -59,7 +60,7 @@ export default function About() {
                         initials="AC"
                         memberBlurb={loremText}
                         role="Backend Engineer"
-                        imgUrl="null"
+                        imgUrl= {antonia}
                         setActiveMember={setActiveMember}
                     />
                     <TeamMember
