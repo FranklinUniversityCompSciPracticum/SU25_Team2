@@ -5,6 +5,7 @@ import TeamMember from '../Components/TeamMember/TeamMember';
 import nDoran from '../Components/Assets/ndoran.png';
 import sTeillon from '../Components/Assets/steillon.jpg';
 import antonia from '../Components/Assets/antonia.png';
+import nature from '../Components/Assets/beach.avif';
 
 export default function About() {
 
