@@ -260,3 +260,12 @@ app.post('/login', async (req, res) => {
     res.status(500).json({ success: false, errors: "Server Error" });
   }
 });
+
+
+// Creating Endpoints for NewCollection Data 
+app.get('/newcollections',async (req,res)=> {
+	let products = await Product.find({});
+	let newcollection = products.slice(1).slice(-8);
+	console.log("NewCollection Fetched");
+	res.send(newcollection);
+})
