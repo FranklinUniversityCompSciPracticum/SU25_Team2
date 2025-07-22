@@ -1,17 +1,24 @@
 import React from 'react';
 import './Popular.css';
 import Item from '../Item/Item';
-import data_product from '../Assets/data';
 
-/* This component displays a list of popular
-items in from the data.js file. Will update to fetch data from the backend later. */
+
 
 const Popular = (props) => {
+
+ const [popularProducts,setPopularProducts] = useState([]);
+
+ useEffect(()=>{
+	fetch('http://localhost:4000/popularinmen')
+	.then((response)=>response.json())
+	.then((data)=>setPopularProducts(data));
+ },[])
+
   return (
     <div className='popular'>
       <h1>Popular in Men</h1> 
       <div className="popular-item">
-        {data_product.map((item, index) => {
+        {popularProducts.map((item, index) => {
             return (
             <Item
               key={index}
