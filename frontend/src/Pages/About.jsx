@@ -5,7 +5,7 @@ import TeamMember from '../Components/TeamMember/TeamMember';
 import nDoran from '../Components/Assets/ndoran.png';
 import sTeillon from '../Components/Assets/steillon.jpg';
 import antonia from '../Components/Assets/antonia.png';
-import nature from '../Components/Assets/beach.avif';
+import ayub from '../Components/Assets/ayub.png';
 
 export default function About() {
 
@@ -47,9 +47,9 @@ export default function About() {
                     <TeamMember
                         name="Ayub Ali"
                         initials="AA"
-                        memberBlurb={loremText}
-                        role="Product Manager"
-                        imgUrl="null"
+                        memberBlurb="Overseeing the development process & responsible for building and maintaining the core functionality of the application"
+                        role="Team Manager/Lead Developer"
+                        imgUrl= {ayub}
                         setActiveMember={setActiveMember}
                         email="alia14@email.franklin.edu"
                     />
@@ -57,7 +57,7 @@ export default function About() {
                         name="Spencer Teillon"
                         initials="ST"
                         memberBlurb={loremText}
-                        role="UX Designer"
+                        role="Frontend Developer"
                         imgUrl={sTeillon}
                         setActiveMember={setActiveMember}
                         email="teillo01@email.franklin.edu"
@@ -66,7 +66,7 @@ export default function About() {
                         name="Antonia Kelly-Caswell"
                         initials="AC"
                         memberBlurb={loremText}
-                        role="Backend Engineer"
+                        role="Frontend Developer"
                         imgUrl= {antonia}
                         setActiveMember={setActiveMember}
                         email="kellyc10@email.franklin.edu"
@@ -83,7 +83,7 @@ export default function About() {
                     <TeamMember
                         name="Case Starcher"
                         initials="CS"
-                        role="QA Specialist"
+                        role="Frontend Developer"
                         imgUrl="null"
                         memberBlurb={loremText}
                         setActiveMember={setActiveMember}
