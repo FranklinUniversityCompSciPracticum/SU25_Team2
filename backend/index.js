@@ -269,3 +269,12 @@ app.get('/newcollections',async (req,res)=> {
 	console.log("NewCollection Fetched");
 	res.json(newcollection);
 })
+
+
+// Creating Endpoints for Popular Section Data
+app.get('/popularinmen',async (req,res)=> {
+	let products = await Product.find({category:"men"});
+	let popular_in_men = products.slice(0,4);
+	console.log("Popular In Men Fetched");
+	res.json(popular_in_men);
+})
