@@ -1,21 +1,16 @@
 import React from 'react';
 import { Avatar } from '@mui/material';
 
-function TeamMember({ name, initials, role, setActiveMember, memberBlurb, imgUrl }) {
+function TeamMember({ name, initials, role, setActiveMember, memberBlurb, imgUrl, email }) {
 
     const handleMouseEnter = () => {
-        setActiveMember({ name, role, memberBlurb});
-    };
-
-    const handleMouseLeave = () => {
-        setActiveMember(null);
+        setActiveMember({ name, role, memberBlurb, email});
     };
 
     return (
         <div
             className='avatar-expand'
             onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
         >
             <Avatar 
                 className='team-avatars'

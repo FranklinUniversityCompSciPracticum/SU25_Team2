@@ -27,7 +27,10 @@ export default function About() {
                 <p>{aboutBlurb2}</p>
                 <p>{aboutBlurb3}</p>
             </div>
-            <div className='team'>
+            <div 
+                className='team'
+                onMouseLeave = {() => setActiveMember(null)}
+            >
                 <div className='team-header'>
                     <h2> Meet the Team </h2>
                 </div>
@@ -39,6 +42,7 @@ export default function About() {
                         role="Lead Developer"
                         imgUrl="null"
                         setActiveMember={setActiveMember}
+                        email="schaef50@email.franklin.edu"
                     />
                     <TeamMember
                         name="Ayub Ali"
@@ -47,6 +51,7 @@ export default function About() {
                         role="Product Manager"
                         imgUrl="null"
                         setActiveMember={setActiveMember}
+                        email="alia14@email.franklin.edu"
                     />
                     <TeamMember
                         name="Spencer Teillon"
@@ -55,6 +60,7 @@ export default function About() {
                         role="UX Designer"
                         imgUrl={sTeillon}
                         setActiveMember={setActiveMember}
+                        email="teillo01@email.franklin.edu"
                     />
                     <TeamMember
                         name="Antonia Kelly-Caswell"
@@ -63,6 +69,7 @@ export default function About() {
                         role="Backend Engineer"
                         imgUrl= {antonia}
                         setActiveMember={setActiveMember}
+                        email="kellyc10@email.franklin.edu"
                     />
                     <TeamMember
                         name="Nick Doran"
@@ -71,6 +78,7 @@ export default function About() {
                         role="Full Stack Software Developer"
                         imgUrl={nDoran}
                         setActiveMember={setActiveMember}
+                        email="doran13@email.franklin.edu"
                     />
                     <TeamMember
                         name="Case Starcher"
@@ -79,6 +87,7 @@ export default function About() {
                         imgUrl="null"
                         memberBlurb={loremText}
                         setActiveMember={setActiveMember}
+                        email="starch20@email.franklin.edu"
                     />
                 </Stack>
 
@@ -89,6 +98,9 @@ export default function About() {
                         </div>
                         <div className='blurb-text'>
                             {activeMember.memberBlurb}
+                        </div>
+                        <div className='blurb-email'>
+                            Contact: {activeMember.email}
                         </div>
                     </div>
                 )}
