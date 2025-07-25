@@ -11,7 +11,8 @@ const AddProduct = () => {
         image: "",
         category: "women",
         new_price: "",
-        old_price: ""
+        old_price: "",
+        description: ""
     });
 
     // image file selection and stores it in state
@@ -68,11 +69,7 @@ const AddProduct = () => {
                 <p>Product title</p>
                 <input value={productDetails.name} onChange={changeHandler} type="text" name='name' placeholder='Enter product title' />
             </div>
-            {/* Product ID mandated by backend, we can use a unique identifier generator in backend if time allows */}
-            <div className={productDetails.id ? "addproduct-itemfield" : "addproduct-itemfield error"}>
-                <p>Product ID</p>
-                <input value={productDetails.id} onChange={changeHandler} type="text" name='id' placeholder='Enter product ID' />
-            </div>
+            {/* Product ID mandated by backend, updated index.js to auto-increment and removing from user view */}
             <div className="addproduct-price">
                 <div className="addproduct-itemfield">
                     <p>Old Price</p>
@@ -90,6 +87,18 @@ const AddProduct = () => {
                     <option value="men">Men</option>
                     <option value="kids">Kids</option>
                 </select>
+            </div>
+            {/* Product description input */}
+            <div className="addproduct-itemfield">
+                <p>Product Description</p>
+                <textarea 
+                    value={productDetails.description} 
+                    onChange={changeHandler} 
+                    name="description" 
+                    placeholder='Enter product description'
+                    rows="4"
+                    className='addproduct-description-textarea'
+                />
             </div>
             <div className="addproduct-itemfield">
                 <label htmlFor="file-input">

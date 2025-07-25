@@ -93,6 +93,31 @@
     border-color: #667eea;
 }
 
+.addproduct-description-textarea {
+    width: 100%;
+    min-height: 100px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    padding: 15px;
+    font-size: 14px;
+    color: #2d3748;
+    background: white;
+    cursor: text;
+    transition: all 0.3s ease;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.addproduct-description-textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.addproduct-description-textarea:hover {
+    border-color: #667eea;
+}
+
 .addproduct-thumbnail-img {
     width: 120px;
     height: 120px;

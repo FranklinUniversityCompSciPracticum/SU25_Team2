@@ -98,6 +98,10 @@ const Product = mongoose.model("Product", {
     type: Number,
     required: true,
   },
+  description: {
+    type: String,
+    default: "A stylish and comfortable product perfect for any occasion. High quality materials and modern design.",
+  },
   date: {
     type: Date,
     default: Date.now,
@@ -110,21 +114,41 @@ const Product = mongoose.model("Product", {
 
 // Creating Endpoint for Adding Products
 app.post('/addproduct', async (req, res)=> {
-    const product = new Product({
-      id:req.body.id,
-      name:req.body.name,
-      image:req.body.image,
-      category:req.body.category,
-      new_price:req.body.new_price,
-      old_price:req.body.old_price,
-    });
-    console.log(product);
-    await product.save();
-    console.log("Saved");
-    res.json({
-      success:true,
-      name:req.body.name,
-    })
+    try {
+        let products = await Product.find({});
+        let id;
+        if(products.length > 0) {
+            let last_product_array = products.slice(-1);
+            let last_product = last_product_array[0];
+            id = last_product.id + 1;
+        } else {
+            id = 1;
+        }
+        
+        const product = new Product({
+            id: id,
+            name: req.body.name,
+            image: req.body.image,
+            category: req.body.category,
+            new_price: req.body.new_price,
+            old_price: req.body.old_price,
+            description: req.body.description || "A stylish and comfortable product perfect for any occasion. High quality materials and modern design.",
+        });
+        
+        console.log(product);
+        await product.save();
+        console.log("Saved");
+        res.json({
+            success: true,
+            name: req.body.name,
+        });
+    } catch (error) {
+        console.error('Error adding product:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to add product'
+        });
+    }
 })
 
 // Creating Endpoint for Removing Products
@@ -144,7 +168,6 @@ app.get('/allproducts',async (req,res)=> {
 	console.log("All Products Fetched");
 	res.send(products);
 })
-
 
 // Schema creating for User Model 
 const Users = mongoose.model("User", {
@@ -278,3 +301,43 @@ app.get('/popularinmen',async (req,res)=> {
 	console.log("Popular In Men Fetched");
 	res.json(popular_in_men);
 })
+
+// creating middleware to fetch user  
+  const fetchUser = async (req, res, next) => {
+    const token = req.header('auth-token');
+    if (!token) {
+      return res.status(401).send({ error: "Please authenticate using a valid token" });
+    }
+    try {
+      const data = jwt.verify(token, 'secret_ecom');
+      req.user = data.user;
+      next();
+    } catch (error) {
+      return res.status(401).send({ error: "Please authenticate using a valid token" });
+    }
+}
+
+// Creating endpoints for adding products in cartdata
+app.post('/addtocart', fetchUser,async (req, res) => {
+
+  let userData = await Users.findOne({ _id: req.user.id });
+  userData.cartData[req.body.itemId] += 1;
+  await Users.findOneAndUpdate({ _id: req.user.id }, {cartData: userData.cartData});
+  res.send("Added to Cart");
+});
+
+// endpoint to remove items from cart
+app.post('/removefromcart', fetchUser, async (req, res) => {
+  let userData = await Users.findOne({ _id: req.user.id });
+  if (userData.cartData[req.body.itemId] > 0)
+  userData.cartData[req.body.itemId] -= 1;
+  await Users.findOneAndUpdate({ _id: req.user.id }, {cartData: userData.cartData});
+  res.send("Removed from Cart");
+});
+
+// endpoint to get cart data
+app.post('/getcart', fetchUser, async (req, res) => {
+  console.log("GetCart");
+  let userData = await Users.findOne({ _id: req.user.id });
+  res.json(userData.cartData);
+});
