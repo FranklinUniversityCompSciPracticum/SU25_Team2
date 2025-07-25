@@ -3,9 +3,10 @@ import './CSS/About.css'
 import Stack from '@mui/material/Stack';
 import TeamMember from '../Components/TeamMember/TeamMember';
 import nDoran from '../Components/Assets/ndoran.png';
-import sTeillon from '../Components/Assets/steillon.jpg';
+import spencer from '../Components/Assets/spencer.jpg';
 import antonia from '../Components/Assets/antonia.png';
 import ayub from '../Components/Assets/ayub.png';
+import caseImage from '../Components/Assets/caseImage.png';
 
 export default function About() {
 
@@ -57,8 +58,8 @@ export default function About() {
                         name="Spencer Teillon"
                         initials="ST"
                         memberBlurb={loremText}
-                        role="Frontend Developer"
-                        imgUrl={sTeillon}
+                        role="Assistant Developer"
+                        imgUrl={spencer}
                         setActiveMember={setActiveMember}
                         email="teillo01@email.franklin.edu"
                     />
@@ -83,9 +84,9 @@ export default function About() {
                     <TeamMember
                         name="Case Starcher"
                         initials="CS"
-                        role="Frontend Developer"
-                        imgUrl="null"
-                        memberBlurb={loremText}
+                        role="Assistant Developer"
+                        imgUrl= {caseImage}
+                        memberBlurb="Did a lot of detail work with links and formatting along with adding descriptions to clothing and gave the kids clothing their category"
                         setActiveMember={setActiveMember}
                         email="starch20@email.franklin.edu"
                     />
