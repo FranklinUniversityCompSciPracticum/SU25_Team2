@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import './CSS/About.css'
 import Stack from '@mui/material/Stack';
 import TeamMember from '../Components/TeamMember/TeamMember';
@@ -12,10 +12,9 @@ export default function About() {
 
     const [activeMember, setActiveMember] = useState(null);
 
-    const aboutBlurb1 = `At Paradise, we believe that clothing should be more than just something you wear - it should be an invitation to explore, escape, and express yourself. Our brand is rooted in the textures, colors, and energy of the natural world, with each collection drawing from tropical landscapes, remote wilderness, and the laid-back rhythm of outdoor life. From lush island greens to sun-bleached sands, every piece we design is meant to capture the feeling of stepping into someplace new - somewhere free.`
-    const aboutBlurb2 = `Our mission is to bring that spirit of exploration into everyday wear. Whether you're trekking a coastal trail, lounging by the water, or navigating your day-to-day in the city, Paradise offers clothing that's comfortable, durable, and unmistakably bold. We blend natural tones with vibrant prints, relaxed silhouettes with thoughtful detail, creating a style that's equal parts wild and wearable.`
-    const aboutBlurb3 = `Founded by a small team of student designers with a shared love for nature and fashion, Paradise was born out of a classroom project that quickly turned into something bigger. What started as a creative exercise has grown into a fully realized brand that celebrates the connection between people and the environments that inspire them. We value sustainability, individuality, and the belief that everyone deserves to feel good in what they wear - and where it takes them.`
-    const loremText ="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod et quasi vitae temporibus placeat? Architecto similique repellendus ad pariatur expedita nihil laudantium ratione. Ab natus quidem sunt necessitatibus. Dolor, sunt!"
+    const aboutBlurb1 = `We are a team of computer science students brought together by a shared passion for building practical, user-focused web applications. As part of our practicum project, we designed and developed a fully functional retail website using the MERN stack (MongoDB, Express.js, React, and Node.js). The site includes a complete registration and login system, a dynamic shopping cart, and an admin panel that allows store managers to easily add, edit, and manage product listings.`
+    const aboutBlurb2 = `Throughout the project, we emphasized clean design, responsive layouts, and intuitive navigation to deliver a modern storefront experience. On the frontend, we used React along with Material UI (MUI) to ensure a polished and accessible interface. On the backend, we implemented robust APIs and connected them to MongoDB for persistent data storage, supporting everything from user authentication to real-time cart updates.`
+    const aboutBlurb3 = `We collaborated closely using Git and GitHub for version control, learning not just how to build full-stack applications, but also how to work as an effective development team. This project helped us refine our technical skills, deepen our understanding of real-world web development workflows, and create something we're genuinely proud to share.`
 
     return (
         <div className='container'>
@@ -39,7 +38,7 @@ export default function About() {
                     <TeamMember 
                         name="John Schaefer"
                         initials="JS"
-                        memberBlurb={loremText}
+                        memberBlurb=""
                         role="Lead Developer"
                         imgUrl="null"
                         setActiveMember={setActiveMember}
@@ -57,7 +56,7 @@ export default function About() {
                     <TeamMember
                         name="Spencer Teillon"
                         initials="ST"
-                        memberBlurb={loremText}
+                        memberBlurb="As an Assistant Frontend Developer, I contributed to key UI components including a dynamic newsletter popup, about page, and breadcrumb navigation. I also built the registration interface with robust input validation to ensure a smooth and secure user experience."
                         role="Assistant Developer"
                         imgUrl={spencer}
                         setActiveMember={setActiveMember}
@@ -66,7 +65,7 @@ export default function About() {
                     <TeamMember
                         name="Antonia Kelly-Caswell"
                         initials="AC"
-                        memberBlurb={loremText}
+                        memberBlurb="As a Frontend Developer, I worked on a range of features with a focus on presenting clear, accessible product information. My role involved implementing responsive layouts, refining user interactions, and ensuring data was displayed accurately across components."
                         role="Frontend Developer"
                         imgUrl= {antonia}
                         setActiveMember={setActiveMember}
@@ -76,7 +75,7 @@ export default function About() {
                         name="Nick Doran"
                         initials="ND"
                         memberBlurb="Life long problem solver"
-                        role="Full Stack Software Developer"
+                        role="Full Stack Developer"
                         imgUrl={nDoran}
                         setActiveMember={setActiveMember}
                         email="doran13@email.franklin.edu"

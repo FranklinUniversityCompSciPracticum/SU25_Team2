@@ -1,4 +1,3 @@
-import React from 'react';
 import { Avatar } from '@mui/material';
 
 function TeamMember({ name, initials, role, setActiveMember, memberBlurb, imgUrl, email }) {
