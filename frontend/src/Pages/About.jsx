@@ -7,6 +7,7 @@ import spencer from '../Components/Assets/spencer.jpg';
 import antonia from '../Components/Assets/antonia.png';
 import ayub from '../Components/Assets/ayub.png';
 import caseImage from '../Components/Assets/caseImage.png';
+import john from '../Components/Assets/john_profile.jpg';
 
 export default function About() {
 
@@ -15,6 +16,7 @@ export default function About() {
     const aboutBlurb1 = `We are a team of computer science students brought together by a shared passion for building practical, user-focused web applications. As part of our practicum project, we designed and developed a fully functional retail website using the MERN stack (MongoDB, Express.js, React, and Node.js). The site includes a complete registration and login system, a dynamic shopping cart, and an admin panel that allows store managers to easily add, edit, and manage product listings.`
     const aboutBlurb2 = `Throughout the project, we emphasized clean design, responsive layouts, and intuitive navigation to deliver a modern storefront experience. On the frontend, we used React along with Material UI (MUI) to ensure a polished and accessible interface. On the backend, we implemented robust APIs and connected them to MongoDB for persistent data storage, supporting everything from user authentication to real-time cart updates.`
     const aboutBlurb3 = `We collaborated closely using Git and GitHub for version control, learning not just how to build full-stack applications, but also how to work as an effective development team. This project helped us refine our technical skills, deepen our understanding of real-world web development workflows, and create something we're genuinely proud to share.`
+    const johnBlurb = "Lead Developer with 3+ years of experience building scalable web applications. I specialize in React, Node.js, and MongoDB. When I'm not coding, you'll find me hiking or playing golf. Excited to give business owners and artisans a global reach for their products."
 
     return (
         <div className='container'>
@@ -38,9 +40,9 @@ export default function About() {
                     <TeamMember 
                         name="John Schaefer"
                         initials="JS"
-                        memberBlurb=""
+                        memberBlurb={johnBlurb}
                         role="Lead Developer"
-                        imgUrl="null"
+                        imgUrl={john}
                         setActiveMember={setActiveMember}
                         email="schaef50@email.franklin.edu"
                     />
