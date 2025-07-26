@@ -1,26 +1,73 @@
 import React, { useState, createContext, useEffect } from "react";
-import all_product from "../Components/Assets/all_products"
 
 export const ShopContext = createContext(null);
 
-const getDefaultCart = () => {
-  let cart = {};
-  for (let product of all_product) {
-    cart[product.id] = 0;
-  }
-  return cart;
-};
-
-
 const ShopContextProvider = (props)=>{
-
-  const [cartItems,setCartItems] = useState(getDefaultCart());
+  const [all_product, setAll_product] = useState([]);
+  const [cartItems,setCartItems] = useState({});
   const [showModal, setShowModal] = useState(false);
+
+  // Fetch products from MongoDB when component mounts
+  useEffect(() => {
+    fetch('http://localhost:4000/allproducts')
+      .then((response) => response.json())
+      .then((data) => {
+        setAll_product(data);
+        // Initialize cart with fetched products
+        let cart = {};
+        for (let product of data) {
+          cart[product.id] = 0;
+        }
+        setCartItems(cart);
+      })
+      .catch((error) => console.error('Error fetching products:', error));
+  }, []);
+
+  // Fetch cart data from backend for logged-in users
+  const fetchCartData = () => {
+    if (localStorage.getItem('auth-token')) {
+      fetch('http://localhost:4000/getcart', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/form-data',
+          'auth-token': `${localStorage.getItem('auth-token')}`,
+          'Content-Type': 'application/json',
+        },
+        body: "",
+      })
+      .then((response) => response.json())
+      .then((data) => setCartItems(data))
+      .catch((error) => console.error('Error fetching cart:', error));
+    }
+  };
+
+  // Load cart data when component mounts if user is logged in
+  useEffect(() => {
+    // Only fetch cart data if we have products loaded and user is logged in
+    if (all_product.length > 0 && localStorage.getItem('auth-token')) {
+      fetchCartData();
+    }
+  }, [all_product]); // Dependency on all_product so it runs after products are loaded
  
 
 
   const addToCart = (itemId)=>{
-    setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}));
+    setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+    if(localStorage.getItem("auth-token")) {
+      fetch('http://localhost:4000/addtocart', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/form-data',
+          'auth-token': `${localStorage.getItem("auth-token")}`,
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({"itemId": itemId}),
+      })
+      .then((resp) => resp.json())
+      .then((data)=>console.log(data));
+    } 
+
+
     setShowModal(true);
     setTimeout(() => {
     setShowModal(false);
@@ -29,6 +76,19 @@ const ShopContextProvider = (props)=>{
 
    const removeFromCart = (itemId)=>{
     setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+    if (localStorage.getItem("auth-token")) {
+      fetch('http://localhost:4000/removefromcart', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/form-data',
+          'auth-token': `${localStorage.getItem("auth-token")}`,
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({"itemId": itemId}),
+      })
+      .then((resp) => resp.json())
+      .then((data)=>console.log(data));
+    }
   }
 
   // remove all items regardless of quantity
@@ -63,7 +123,7 @@ const getTotalCartItems = () => {
 }
 
 
-   const contextValue = {getTotalCartItems, getTotalCartAmount, all_product,cartItems,addToCart,removeFromCart, removeAllFromCart, showModal};
+   const contextValue = {getTotalCartItems, getTotalCartAmount, all_product,cartItems,addToCart,removeFromCart, removeAllFromCart, showModal, fetchCartData};
 
  
   useEffect(() => {
