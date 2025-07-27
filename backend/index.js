@@ -1,4 +1,5 @@
 require('dotenv').config(); 
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const port = 4000;
 const express = require("express");
@@ -251,7 +252,6 @@ app.post('/login', async (req, res) => {
   try {
     const { username, password } = req.body;
 
-    // Find the user by username instead of email
     let user = await Users.findOne({ name: username });
     if (!user) {
       return res.status(400).json({
@@ -260,7 +260,6 @@ app.post('/login', async (req, res) => {
       });
     }
 
-    // Compare the password
     const passCompare = await bcrypt.compare(password, user.password);
     if (!passCompare) {
       return res.status(400).json({
@@ -317,7 +316,7 @@ app.get('/popularinmen',async (req,res)=> {
     }
 }
 
-// Creating endpoints for adding products in cartdata
+// creating endpoints for adding products in cartdata
 app.post('/addtocart', fetchUser,async (req, res) => {
 
   let userData = await Users.findOne({ _id: req.user.id });
@@ -326,7 +325,7 @@ app.post('/addtocart', fetchUser,async (req, res) => {
   res.send("Added to Cart");
 });
 
-// endpoint to remove items from cart
+// creating endpoint to remove items from cart
 app.post('/removefromcart', fetchUser, async (req, res) => {
   let userData = await Users.findOne({ _id: req.user.id });
   if (userData.cartData[req.body.itemId] > 0)
@@ -335,9 +334,52 @@ app.post('/removefromcart', fetchUser, async (req, res) => {
   res.send("Removed from Cart");
 });
 
-// endpoint to get cart data
+// creating endpoint to get cart data
 app.post('/getcart', fetchUser, async (req, res) => {
   console.log("GetCart");
   let userData = await Users.findOne({ _id: req.user.id });
   res.json(userData.cartData);
+});
+
+
+
+// creating endpoint for stripe checkout 
+app.post('/checkout', async (req, res) => {
+  try {
+    const { items } = req.body;
+
+    const line_items = items.map((item) => ({
+      price_data: {
+        currency: 'usd',
+        product_data: {
+          name: item.name,
+          description: item.description,
+          images: [item.image],
+        },
+        unit_amount: item.unit_amount,
+      },
+      quantity: item.quantity,
+    }));
+
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: line_items,
+      mode: 'payment',
+      success_url: 'http://localhost:4000/complete',
+      cancel_url: 'http://localhost:4000/cancel',
+    });
+
+    res.status(200).json({ url: session.url });
+
+  } catch (error) {
+    console.error('Error creating checkout session:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+// creating endpoint for complete route 
+app.get('/complete', (req, res) => {
+
+    res.send('<h1>Payment Complete!</h1><p>Thank you for your purchase!</p>');
+
 });
