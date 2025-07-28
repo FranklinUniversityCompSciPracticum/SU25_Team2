@@ -10,9 +10,9 @@ This project is a full-stack eCommerce website that allows users to browse and p
 
 ### 495 Students
 
-Ayub Ali
+Ayub Ali - Co-Team Lead/Project Manager
 
-John Schaefer
+John Schaefer - Co-Team Lead/Team Manager
 
 ### 394 Students
 
@@ -26,7 +26,7 @@ Spencer Teillon
 
 ## Tech Stack
 
-Frontend: HTML, CSS, JavaScript, React JS, React Router (for navigation), MUI (Material UI for UI components), Tailwind CSS (for styling)
+Frontend: HTML, CSS, JavaScript, React JS, React Router (for navigation), MUI (Material UI for UI components)
 
 Backend: Node JS, Express JS
 
@@ -36,7 +36,7 @@ Database: MongoDB, Mongoose (for database schema and models)
 
 Details on how to set up the project follow.
 
-✅ Before You Begin
+Before You Begin
 Make sure you have the following installed:
 
 Node.js – JavaScript runtime environment
@@ -49,36 +49,79 @@ Code Editor with Git support (Recommended: **Visual Studio Code**)
 
 Follow these steps to get the project running on your computer.
 
-## 1️⃣ Clone the Repository
+### 1. Clone the Repository
 
-# Open a terminal (or Git Bash) and run:
+Open a terminal (or Git Bash) and run:
 
 `cd ~/your-folder`
 
 Navigate to a folder where you want the project
 
-# Then clone the repository:
+Then clone the repository:
 
 `git clone https://github.com/FranklinUniversityCompSciPracticum/SU25_Team2.git`
 
-## 2️⃣ Navigate to the Project Folder
+### 2. Navigate to the Project Folder
 
 `cd SU25_Team2`
 
-## 3️⃣ Install Dependencies
+### 3. Install Dependencies for All Components
 
-`npm install`
+Install backend dependencies:
+```
+cd backend
+npm install
+```
 
-This installs all the necessary packages listed in package.json.
+Install frontend dependencies:
+```
+cd ../frontend
+npm install
+```
 
-## 4️⃣ Start the Development Server
+Install admin panel dependencies:
+```
+cd ../admin
+npm install
+```
 
-`npm start`
+### 4. Set Up Environment Variables
 
-Your app will launch at:
-http://localhost:3000
+Create a `.env` file in the backend directory with:
+```
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+PORT=4000
+STRIPE_SECRET_KEY=your_stripe_secret_key
+STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+```
 
-## 🔥 Common Issues & Fixes
+### 5. Start the Application
+
+You need to run three components simultaneously. Open three separate terminal windows:
+
+**Terminal 1 - Backend Server:**
+```
+cd backend
+node index.js
+```
+Server will start on http://localhost:4000
+
+**Terminal 2 - Admin Panel:**
+```
+cd admin
+npm run dev
+```
+Admin panel will start on http://localhost:5173
+
+**Terminal 3 - Frontend:**
+```
+cd frontend
+npm start
+```
+Frontend will start on http://localhost:3000
+
+## Common Issues & Fixes
 
 1. "Command Not Found" Errors
    If `git` or `npm` is not recognized:
@@ -88,22 +131,18 @@ http://localhost:3000
 
    Run these commands to verify installation:
 
-   `git -v` # should return a Git version, e.g., git version 2.42.0
-   `node -v` # should return a Node version, e.g., v22.1.0
+   `git -v` - should return a Git version, e.g., git version 2.42.0
+   `node -v` - should return a Node version, e.g., v22.1.0
 
    If these commands return a version number, the tools are installed correctly.
 
-2. "Port 5173 is Already in Use"
-   If you’re using Vite and get a port conflict:
-   Close any running Vite instances or restart your computer.
-
-   To use a different port:
-
-   `npm run dev -- --port 3000`
+2. "Port Already in Use"
+   If you get a port conflict:
+   Close any running instances or restart your computer.
 
    To check if a port (like 5173) is still in use:
 
-   netstat -ano | findstr :5173
+   `netstat -ano | findstr :5173`
 
    If nothing is returned, the port is free and not in use.
 
@@ -118,23 +157,52 @@ http://localhost:3000
    `rm -rf node_modules package-lock.json`
    `npm install`
 
-## 🎯 Project Structure Overview
-*BEING MODIFIED 06/03
-```plaintext
-SU25_Hotel/
-│-- public/               # Static assets
-│-- src/
-│   ├── Components/       # Reusable UI components
-│   │   ├── Assets        # Static assets for the components
-│   │   ├── Navbar        # Navbar component
-│   │   ├── Footer        # Footer component
-│   ├── Context/          # Global state or context management
-│   ├── Pages/            # Different screens (Login, Register, Cart, Product, etc.)
-│   ├── App.css
-│   ├── App.jsx           # Main app component
-│   └── index.css
-│   └── index.js
-│-- package.json          # Project dependencies
-|-- README.md
-|-- tailwind.config.js
+## Project Structure Overview
+
+```
+SU25_Team2/
+├── README.md
+├── backend/
+│   ├── index.js                    # Main server file
+│   ├── package.json               # Backend dependencies
+│   ├── .env                       # Environment variables
+│   └── upload/
+│       └── images/                # Uploaded product images
+├── frontend/
+│   ├── package.json               # Frontend dependencies
+│   ├── public/
+│   │   ├── index.html
+│   │   └── favicon.ico
+│   └── src/
+│       ├── App.js                 # Main frontend component
+│       ├── index.js               # Frontend entry point
+│       ├── Components/
+│       │   ├── Assets/            # Static assets
+│       │   ├── Navbar/            # Navigation component
+│       │   ├── Footer/            # Footer component
+│       │   ├── CartItems/         # Shopping cart display
+│       │   ├── ProductDisplay/    # Individual product view
+│       │   └── NewCollections/    # Featured products
+│       ├── Context/
+│       │   └── ShopContext.jsx    # Global state management
+│       ├── Pages/
+│       │   ├── Login.jsx          # User authentication
+│       │   ├── Register.jsx       # User registration
+│       │   ├── Cart.jsx           # Shopping cart page
+│       │   ├── Product.jsx        # Product details page
+│       │   └── Shop.jsx           # Main shopping page
+│       └── CSS/                   # Styling files
+└── admin/
+    ├── package.json               # Admin panel dependencies
+    ├── index.html
+    └── src/
+        ├── App.jsx                # Main admin component
+        ├── main.jsx               # Admin entry point
+        ├── Components/
+        │   ├── AddProduct/        # Product management
+        │   ├── ListProduct/       # Product listing
+        │   ├── Navbar/            # Admin navigation
+        │   └── Sidebar/           # Admin sidebar
+        └── Pages/
+            └── Admin/             # Admin dashboard
 ```
