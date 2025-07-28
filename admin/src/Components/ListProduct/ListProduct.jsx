@@ -9,7 +9,7 @@ const ListProduct = () => {
     const [allproducts,setAllProducts] = useState([]);
 
     const fetchInfo = async () => {
-        await fetch('http://localhost:4000/allproducts')
+        await fetch('https://backend-ytk5.onrender.com/allproducts')
         .then((res) => res.json())
         .then((data) => {setAllProducts(data)});
     }
@@ -27,7 +27,7 @@ const ListProduct = () => {
             return; // User cancelled removing product, don't delete
         }
         try {
-            const response = await fetch('http://localhost:4000/removeproduct', {
+            const response = await fetch('https://backend-ytk5.onrender.com/removeproduct', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',

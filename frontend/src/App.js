@@ -20,7 +20,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import './App.css';
 
 // Export backend URL and currency for cart components
-export const backend_url = 'http://localhost:4000';
+export const backend_url = 'https://backend-ytk5.onrender.com';
 export const currency = '$';
 
 function App() {

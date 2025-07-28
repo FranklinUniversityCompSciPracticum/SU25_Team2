@@ -26,7 +26,7 @@ const handleCheckout = async () => {
         quantity: cartItems[e.id]
       }));
 
-    const response = await fetch("http://localhost:4000/checkout", {
+    const response = await fetch("https://backend-ytk5.onrender.com/checkout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

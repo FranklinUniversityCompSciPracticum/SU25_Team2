@@ -67,7 +67,7 @@ const Register = () => {
     console.log('Register Function Executed');
     console.log(formData);
     let responseData;
-    await fetch('http://localhost:4000/signup',{
+    await fetch('https://backend-ytk5.onrender.com/signup',{
       method: 'POST',
       headers:{
         Accept:'application/form-data',

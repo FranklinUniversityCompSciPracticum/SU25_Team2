@@ -35,7 +35,7 @@ const AddProduct = () => {
         formData.append('product', image);
 
         //Upload the image to the backend
-        await fetch('http://localhost:4000/upload', {
+        await fetch('https://backend-ytk5.onrender.com/upload', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -49,7 +49,7 @@ const AddProduct = () => {
             console.log(product);
             
             // Send all product details to backend
-            await fetch('http://localhost:4000/addproduct', {
+            await fetch('https://backend-ytk5.onrender.com/addproduct', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',

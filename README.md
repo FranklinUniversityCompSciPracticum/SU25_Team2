@@ -105,7 +105,7 @@ You need to run three components simultaneously. Open three separate terminal wi
 cd backend
 node index.js
 ```
-Server will start on http://localhost:4000
+Server will start on https://backend-ytk5.onrender.com
 
 **Terminal 2 - Admin Panel:**
 ```
