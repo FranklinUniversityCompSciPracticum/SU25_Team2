@@ -8,6 +8,8 @@ const mongoose = require("mongoose");
 const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken");
 const multer = require("multer");
+const multerS3 = require("multer-s3");
+const AWS = require("aws-sdk");
 const path = require("path");
 const cors = require("cors");
 
@@ -49,27 +51,35 @@ app.listen(port,(error)=> {
   }
 })
 
-// Adding image storage using multer.
-// The image upload will be renamed to include the field name and a timstamp.
-const storage = multer.diskStorage({
-  destination: './upload/images',
-  filename: (req, file, cb) => {
-    return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`);
+// Configure AWS S3
+AWS.config.update({
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  region: process.env.AWS_REGION
+});
+
+const s3 = new AWS.S3();
+
+// Adding image storage using multer with S3
+const storage = multerS3({
+  s3: s3,
+  bucket: process.env.S3_BUCKET_NAME,
+  key: function (req, file, cb) {
+    const filename = `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`;
+    cb(null, filename);
   }
 });
 
-// Initialize multer with the storage configuration
+// Initialize multer with the S3 storage configuration
 const upload = multer({
-  storage: storage});
+  storage: storage
+});
 
-// Creating the Upload Endpoint for images.
-// The images will be stored in the 'upload/images' directory and served from '/images'
-app.use('/images', express.static('upload/images'))
-
+// Creating the Upload Endpoint for images using S3
 app.post('/upload', upload.single('product'), (req, res) => {
   res.json({
     success: 1,
-    image_url: `http://localhost:${port}/images/${req.file.filename}`
+    image_url: req.file.location // S3 provides the full URL in req.file.location
   });
 });
 
