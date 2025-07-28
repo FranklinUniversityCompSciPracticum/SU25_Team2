@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div className="hero">
       <div className="hero-right">
-        <img src={paradise} alt="Paradise" />
+        <div className='hero-img'><img src={paradise} alt="Paradise" /></div>
         
         {/* Text on top of the image */}
         <p className="hero-text">Welcome To Paradise</p>
