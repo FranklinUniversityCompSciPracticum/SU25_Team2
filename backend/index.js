@@ -129,9 +129,10 @@ app.post('/addproduct', async (req, res)=> {
         let products = await Product.find({});
         let id;
         if(products.length > 0) {
-            let last_product_array = products.slice(-1);
-            let last_product = last_product_array[0];
-            id = last_product.id + 1;
+            // Fixing logic, using the maximum ID to avoid duplicates instead of using the last product's ID
+            // This fixes the error that if products are deleted, the next ID is still unique
+            let maxId = Math.max(...products.map(product => product.id));
+            id = maxId + 1;
         } else {
             id = 1;
         }
