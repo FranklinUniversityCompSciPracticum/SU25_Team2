@@ -30,7 +30,8 @@
 
 .hero-right img {
   width: 100%; /* Make the image fill the container */
-  object-fit: cover; /* Ensure the image fills the space proportionally */
+  height: 100%; 
+  object-fit: cover; 
 }
 
 .hero-buttons {
