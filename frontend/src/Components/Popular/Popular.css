@@ -1,36 +1,43 @@
-.popular{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    max-width: 1280px;
-    margin: auto;
-}
-.popular h1{
-    color: #171717;
-    font-size: 25px;
-    font-weight: 600;
+@font-face {
+  font-family: 'Beach';
+  src: url('../Assets/BeachSunny.otf') format('opentype'); 
+  font-weight: normal;
+  font-style: normal;
 }
 
-.popular-item{
-    margin-top: 20px;
-    display: flex;
-    width: 100%;
-    /* flex-wrap: wrap; 
-    Was causing display issues*/
-    gap: 25px;
-    justify-content: center;
-    align-items: baseline; 
+.popular {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 1280px;
+  margin: auto;
 }
-/* ---------- media query------------ */
 
-@media(max-width: 800px){
-    .popular h1{
-        font-size: 30px;
-    }
-    .popular hr{
-        width: 80px;
-        height: 4px;
-        
-    }
+.popular h1 {
+  font-size: 66px;
+  font-family: 'Beach', sans-serif; 
+  font-weight: 600;
+  color: #2c7896;
+}
+
+.popular-item {
+  margin-top: 20px;
+  display: flex;
+  width: 100%;
+  gap: 25px;
+  justify-content: center;
+  align-items: baseline;
+}
+
+/* ---------- media query ------------ */
+@media (max-width: 800px) {
+  .popular h1 {
+    font-size: 30px;
+  }
+
+  .popular hr {
+    width: 80px;
+    height: 4px;
+  }
 }

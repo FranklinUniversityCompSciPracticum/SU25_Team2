@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Beach';
+  src: url('../Assets/BeachSunny.otf') format('opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
 .newcollections{
     display: flex;
     flex-direction: column;
@@ -7,9 +14,10 @@
     margin: auto;
 }
 .newcollections h1{
-    color: #171717;
-    font-size: 25px;
+    font-size: 66px;
+    font-family: 'Beach', sans-serif; 
     font-weight: 600;
+     color: #2c7896;
 }
 
 .collections{
