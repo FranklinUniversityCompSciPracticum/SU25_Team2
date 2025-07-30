@@ -94,6 +94,19 @@ const ShopContextProvider = (props)=>{
   // remove all items regardless of quantity
   const removeAllFromCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: 0 }));
+    if (localStorage.getItem("auth-token")) {
+      fetch('https://backend-ytk5.onrender.com/removeallfromcart', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/form-data',
+          'auth-token': `${localStorage.getItem("auth-token")}`,
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({"itemId": itemId}),
+      })
+      .then((resp) => resp.json())
+      .then((data)=>console.log(data));
+    }
   };
 
   const getTotalCartAmount = () => {

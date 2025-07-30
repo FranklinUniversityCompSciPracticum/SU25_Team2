@@ -345,6 +345,25 @@ app.post('/removefromcart', fetchUser, async (req, res) => {
   res.send("Removed from Cart");
 });
 
+// creating endpoint to remove all items of a product from cart
+app.post('/removeallfromcart', fetchUser, async (req, res) => {
+  try {
+    let userData = await Users.findOne({ _id: req.user.id });
+    userData.cartData[req.body.itemId] = 0;
+    await Users.findOneAndUpdate({ _id: req.user.id }, {cartData: userData.cartData});
+    res.json({
+      success: true,
+      message: "All items removed from cart"
+    });
+  } catch (error) {
+    console.error('Error removing all items from cart:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to remove items from cart'
+    });
+  }
+});
+
 // creating endpoint to get cart data
 app.post('/getcart', fetchUser, async (req, res) => {
   console.log("GetCart");
@@ -395,3 +414,8 @@ app.get('/complete', (req, res) => {
 
 });
 
+// creating endpoint for cancel route
+app.get('/cancel', (req, res) => {
+  // Redirecting user to the main page
+  res.redirect('https://ecommerce-mern-khaki.vercel.app/');
+});
