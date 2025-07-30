@@ -28,6 +28,27 @@ const AddProduct = () => {
     // Uploading the image and then adding the product
     const addProduct = async () => {
         console.log(productDetails);
+        
+        // Validate and parse prices
+        const newPrice = parseFloat(productDetails.new_price);
+        const oldPrice = parseFloat(productDetails.old_price);
+        
+        // Validation
+        if (isNaN(newPrice) || newPrice <= 0) {
+            alert("Please enter a valid New Price (e.g., 25.99)");
+            return;
+        }
+        
+        if (isNaN(oldPrice) || oldPrice <= 0) {
+            alert("Please enter a valid Old Price (e.g., 29.99)");
+            return;
+        }
+        
+        if (!productDetails.name.trim()) {
+            alert("Please enter a product name");
+            return;
+        }
+        
         let responseData;
         let product = productDetails;
 
@@ -48,14 +69,18 @@ const AddProduct = () => {
             product.image = responseData.image_url;
             console.log(product);
             
-            // Send all product details to backend
+            // Send all product details to backend with proper number conversion
             await fetch('https://backend-ytk5.onrender.com/addproduct', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(product),
+                body: JSON.stringify({
+                    ...product,
+                    new_price: newPrice,  // Parsed number
+                    old_price: oldPrice   // Parsed number
+                }),
             }).then((resp) => resp.json()).then((data) => {
                 data.success ? alert("Product Added") : alert("Failed")
             });
@@ -73,11 +98,11 @@ const AddProduct = () => {
             <div className="addproduct-price">
                 <div className="addproduct-itemfield">
                     <p>Old Price</p>
-                    <input value={productDetails.old_price} onChange={changeHandler} type="text" name="old_price" placeholder='Enter a value no characters' />
+                    <input value={productDetails.old_price} onChange={changeHandler} type="number" step="0.01" min="0" name="old_price" placeholder='Enter price (e.g., 29.99)' />
                 </div>
                 <div className="addproduct-itemfield">
                     <p>New Price</p>
-                    <input value={productDetails.new_price} onChange={changeHandler} type="text" name="new_price" placeholder='Enter a value no characters' />
+                    <input value={productDetails.new_price} onChange={changeHandler} type="number" step="0.01" min="0" name="new_price" placeholder='Enter price (e.g., 24.99)' />
                 </div>
             </div>
             <div className="addproduct-itemfield">

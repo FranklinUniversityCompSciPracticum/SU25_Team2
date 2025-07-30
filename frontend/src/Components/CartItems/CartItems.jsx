@@ -22,7 +22,7 @@ const handleCheckout = async () => {
         name: e.name,
         image: e.image,
         description: e.description || "No description",
-        unit_amount: e.new_price * 100, // in cents
+        unit_amount: Math.round(e.new_price * 100), // Fix floating point precision
         quantity: cartItems[e.id]
       }));
 
