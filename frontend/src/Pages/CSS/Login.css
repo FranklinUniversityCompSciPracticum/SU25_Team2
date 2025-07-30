@@ -61,7 +61,7 @@ body {
 }
 
 .register-link a {
-  color: var(--highlight);
+  color: #009688;
   text-decoration: none;
   font-weight: bold;
 }
