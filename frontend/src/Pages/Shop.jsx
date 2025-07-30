@@ -18,10 +18,10 @@ export default function Shop() {
     return (
         <div style={{ padding: '20px', textAlign: 'center' }}>
             <Hero />
-            <div id="popular">
-                <Popular />
+            <div id="popular" style={{ marginTop: '50px' }}>
+            <Popular />
             </div>
-            <div id="new-collections">
+            <div id="new-collections"style={{ marginTop: '60px' }}>
                 <NewCollections />
             </div>
             <div id="offers">

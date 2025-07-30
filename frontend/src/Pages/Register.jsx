@@ -197,11 +197,11 @@ const Register = () => {
       </Button>
 
       <p className="login-redirect">
-        Already have an account? Login{' '}
+        Already have an account? {' '}
         <Link className="link" to="/login">
-          here
+          Login
         </Link>{' '}
-        instead
+        Instead
       </p>
     </Box>
   );
